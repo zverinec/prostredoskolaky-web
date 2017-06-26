@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-# This scripts generates list of activities presented at ks.muni.cz
-# It is not intended to generate whole html!
-# Instead, this script generates just the list of activities and user may
-# add html tags & css by outer scripts.
+"""
+This scripts generates list of activities presented at ks.muni.cz from tsv
+file (exported from table of activies at GDrive).
+It is not intended to generate whole html!
+Instead, this script generates just the list of activities and user may
+add html tags & css by outer scripts.
+"""
 
-# Usage: content-gen.py [ -i infile.tsv ] [ -o outfile.html ]
+# Usage: content_gen.py [ -i infile.tsv ] [ -o outfile.html ]
 # If no input file specified, input is read from stdin.
 # If no output file specified, output is generated to stdout.
+
+# Created by Jan Horacek (c) 2017
 
 # TODO: input file may contain newlines, this script will not handle them
 
@@ -16,8 +21,9 @@ import sys
 
 SEPARATOR = '\t'
 
+
 class ArgOpts(object):
-    def __init__(self, ifn = "", ofn = ""):
+    def __init__(self, ifn="", ofn=""):
         self.ifn = ifn
         self.ofn = ofn
 
@@ -34,9 +40,11 @@ def parse_args(argv):
 
     return opts
 
+
 # HTML encode
 def he(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
 
 class Activity(object):
     def __init__(self, line):
@@ -64,8 +72,8 @@ class Activity(object):
 def process_activity(a):
     o = ""
 
-    o += "<h2>{}</h2>\n".format(a.fullName)
-    o += "<p>{}</p>\n".format(a.annotation)
+    o += "<h2>{}</h2>\n".format(he(a.fullName))
+    o += "<p>{}</p>\n".format(he(a.annotation))
 
     return o
 
