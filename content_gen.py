@@ -46,6 +46,7 @@ def he(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
+# Represents single activity
 class Activity(object):
     def __init__(self, line):
         self._parse_from_line(line)
@@ -70,6 +71,8 @@ class Activity(object):
 def process_activity(a):
     o = ""
 
+    # You wanna modify output? Write it here!
+
     o += "<h2>{}</h2>\n".format(he(a.fullName))
     o += "<p>{}</p>\n".format(he(a.annotation))
 
@@ -81,6 +84,8 @@ def process_tsv(f):
     out = ""
 
     for line in f.readlines()[3:]:
+        # You wanna sort the activities? Create all Activitie()s first, then
+        # sort it, then call process_activity in desired order.
         out += process_activity(Activity(line))
 
     return out
