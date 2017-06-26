@@ -53,8 +53,6 @@ class Activity(object):
     def _parse_from_line(self, l):
         splitted = l.split(SEPARATOR)
 
-        print(splitted)
-
         self.shortName = splitted[1]
         self.fullName = splitted[2]
         self.field = splitted[3]
