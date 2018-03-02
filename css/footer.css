@@ -1,4 +1,17 @@
 #footer {
     background-color: #3f3f3f;
     height: 50px; /* TODO */
+    color: white;
+    text-align: center;
+}
+
+#footer .container {
+    height: 100%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+}
+
+#footer p {
+    margin: 10px;
 }
