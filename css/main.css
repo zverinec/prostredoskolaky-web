@@ -1,0 +1,30 @@
+#activities-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.activity-in {
+    background: #fff;
+    height: 100%;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.activity-out {
+    padding: 15px;
+}
+
+.activity-logo {
+    width: 100%;
+}
+
+.activity-name {
+    text-align: center;
+    font-size: 150%;
+    margin: 15px;
+}
+
+.activity-date {
+    text-align: center;
+    margin: 15px;
+}
