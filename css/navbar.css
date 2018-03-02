@@ -1,0 +1,32 @@
+.navbar-main {
+    text-align: center;
+    float:none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+}
+
+.navbar-main li {
+    display: inline-block;
+    float: none;
+    background-color: #0087e2;
+    color: #fff;
+}
+
+.navbar-main li > a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-main li > a:hover {
+    color: #0087e2;
+    background-color: #fff;
+}
+
+.navbar-field {
+    margin-bottom: 30px;
+}
+
+.navbar-field li {
+    width: 110px;
+}

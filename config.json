@@ -387,11 +387,13 @@
     "code.less",
     "grid.less",
     "tables.less",
+    "forms.less",
     "buttons.less",
     "responsive-utilities.less",
     "glyphicons.less",
     "button-groups.less",
     "navs.less",
+    "navbar.less",
     "breadcrumbs.less",
     "pagination.less",
     "pager.less",
@@ -418,5 +420,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=465cd1077983991464fbb5b8c96c1dff"
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=579af19322b39978394d428986f98c89"
 }
