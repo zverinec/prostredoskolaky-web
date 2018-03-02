@@ -33,6 +33,12 @@ html,body{
     height: 50px; /* TODO */
 }
 
+.header-photo {
+    height: 350px;
+    background: url('/static/header.png') center center no-repeat scroll;
+    background-size: cover;
+}
+
 h2 {
     color: #054899;
     text-align: center;
