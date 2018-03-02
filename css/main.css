@@ -1,3 +1,13 @@
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
 #seminars {
     padding-top: 30px;
     padding-bottom: 40px;
@@ -8,6 +18,19 @@
     padding-top: 30px;
     padding-bottom: 40px;
     background-color: #dde9ed;
+}
+
+#header {
+    background-color: #b4ebfc;
+}
+
+#head-img {
+    width: 100%;
+}
+
+#footer {
+    background-color: #3f3f3f;
+    height: 50px; /* TODO */
 }
 
 h2 {
@@ -49,3 +72,4 @@ h2 {
     text-align: center;
     margin: 15px;
 }
+
