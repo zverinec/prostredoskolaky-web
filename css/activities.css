@@ -1,0 +1,52 @@
+#seminars {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #efefef;
+}
+
+#events {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #dde9ed;
+}
+
+h2 {
+    color: #054899;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#activities-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.activity-in {
+    background: #fff;
+    height: 100%;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.activity-out {
+    padding: 5px;
+}
+
+.activity-logo {
+    display: block;
+    margin: auto;
+    width: 75%;
+}
+
+.activity-name {
+    text-align: center;
+    font-size: 150%;
+    margin: 15px;
+}
+
+.activity-date {
+    text-align: center;
+    margin: 15px;
+}
+
