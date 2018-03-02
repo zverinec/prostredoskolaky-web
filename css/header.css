@@ -12,3 +12,16 @@
     background-size: cover;
 }
 
+#head-caption {
+    position: absolute;
+    margin-top: 100px;
+    left: 50%;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #054899;
+    font-weight: bold;
+    font-size: 30px;
+}
