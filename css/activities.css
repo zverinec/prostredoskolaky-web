@@ -37,16 +37,17 @@ h2 {
     display: block;
     margin: auto;
     width: 75%;
+    padding: 10px;
 }
 
 .activity-name {
     text-align: center;
     font-size: 150%;
-    margin: 15px;
+    margin: 10px;
 }
 
 .activity-date {
     text-align: center;
-    margin: 15px;
+    margin: 10px;
 }
 
