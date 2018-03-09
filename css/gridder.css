@@ -1,17 +1,14 @@
 .gridder {
-    /* list-style-type: none; */
 }
 
 .gridder-list, .gridder-show {
 }
 
-.gridder-list {
-    /* display: inline-block;
-    vertical-align: top; */
+.gridder li {
+    display: inline-block;
 }
 
 .gridder-show {
-    display: block;
     float: left;
     width: 100%;
     position: relative;

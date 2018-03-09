@@ -17,9 +17,11 @@ h2 {
     margin-bottom: 20px;
 }
 
-#activities-list {
+.activities-list {
     display: flex;
     flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0px;
 }
 
 .activity-in {
