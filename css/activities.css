@@ -53,3 +53,14 @@ h2 {
     margin: 10px;
 }
 
+.gridder-padding {
+    margin: 20px 8px 20px 8px;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 3px #0478dc;
+    background-color: #fff;
+}
+
+.gridder-expanded-content {
+    display: flex;
+}
