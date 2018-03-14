@@ -23,6 +23,11 @@
     background-color: #fff;
 }
 
+.navbar-main li > a:focus {
+    color: #fff;
+    background-color: #ffce40;
+}
+
 .navbar-field {
     margin-bottom: 30px;
 }
