@@ -7,3 +7,11 @@ html,body{
     position: relative;
     min-height: 100%;
 }
+
+#about {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #efefef;
+    text-align: center;
+}
+
