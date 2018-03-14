@@ -29,12 +29,13 @@
 }
 
 .navbar-field {
-    margin-bottom: 30px;
+    margin-bottom: 1px;
 }
 
 .navbar-field li {
     border-radius: 3px;
     width: 110px;
+    margin-bottom: 20px;
 }
 
 .navbar-field li > a:after {
