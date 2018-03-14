@@ -45,16 +45,3 @@
     border-left: solid 15px transparent;
     border-right: solid 15px transparent;
 }
-
-.navbar-head {
-   margin-top: 30px;
-}
-
-.navbar-head li {
-    width: 110px;
-}
-
-.navbar-head li > a {
-    padding: 5px;
-    text-transform: uppercase;
-}
