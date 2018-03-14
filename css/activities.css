@@ -41,6 +41,7 @@ h2 {
     margin: auto;
     width: 75%;
     padding: 10px;
+    border-radius: 50%;
 }
 
 .activity-name {
