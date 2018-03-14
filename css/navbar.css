@@ -4,6 +4,7 @@
     margin: 0 auto;
     display: table;
     table-layout: fixed;
+    width: 100%;
 }
 
 .navbar-main li {
@@ -29,7 +30,7 @@
 }
 
 .navbar-field {
-    margin-bottom: 1px;
+    margin-bottom: 15px;
 }
 
 .navbar-field li {
@@ -58,4 +59,12 @@
 
 .navbar-field li > a:focus:after {
     border-top-color: #ffce40;
+}
+
+.icon-bar {
+    background-color: #0087e2;
+}
+
+.navbar-toggle {
+    border-color: #0087e2;
 }

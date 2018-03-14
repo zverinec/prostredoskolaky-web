@@ -19,6 +19,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/jquery.gridder.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
   <div id="wrapper">
    <div class="container-fluid header-photo" id="header">
@@ -31,11 +32,18 @@
 
    <div class="container-flex" id="seminars">
     <div class="container">
-
      <nav class="navbar navbar-main navbar-field">
-      <div class="container-fluid">
-       <ul class="nav navbar-nav">
-        <li><a href="#">Matematika</a></li>
+      <span class="navbar-brand visible-xs">Obory</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-main">
+       <ul class="nav">
+        <li class="nav-item nav-link"><a href="#">Matematika</a></li>
         <li><a href="#">Informatika</a></li>
         <li><a href="#">Fyzika</a></li>
         <li><a href="#">Chemie</a></li>
