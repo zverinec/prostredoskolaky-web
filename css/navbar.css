@@ -37,7 +37,7 @@
     width: 110px;
 }
 
-.navbar-field li:after {
+.navbar-field li > a:after {
     content:'';
     position: absolute;
     top: 100%;
@@ -49,4 +49,12 @@
     border-top: solid 15px #0087e2;
     border-left: solid 15px transparent;
     border-right: solid 15px transparent;
+}
+
+.navbar-field li > a:hover:after {
+    border-top-color: #fff;
+}
+
+.navbar-field li > a:focus:after {
+    border-top-color: #ffce40;
 }
