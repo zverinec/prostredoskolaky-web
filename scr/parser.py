@@ -78,6 +78,11 @@ def parse_csv(f):
     return out
 
 
+def parse_file(fn):
+    with open(fn, 'r') as f:
+        return parse_csv(f)
+
+
 if __name__ == '__main__':
     args = parse_args(sys.argv)
 
