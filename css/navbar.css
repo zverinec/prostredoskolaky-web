@@ -29,6 +29,11 @@
     background-color: #ffce40;
 }
 
+.navbar-main li.active > a {
+    color: #fff;
+    background-color: #ffce40;
+}
+
 .navbar-field {
     margin-bottom: 15px;
 }
@@ -55,6 +60,10 @@
 
 .navbar-field li > a:hover:after {
     border-top-color: #fff;
+}
+
+.navbar-field li.active > a:after {
+    border-top-color: #ffce40;
 }
 
 .navbar-field li > a:focus:after {
