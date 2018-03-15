@@ -66,3 +66,7 @@ h2 {
 .gridder-expanded-content {
     display: flex;
 }
+
+.activity-field {
+    display: none;
+}
