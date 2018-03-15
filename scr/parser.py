@@ -50,7 +50,7 @@ class Activity(object):
         self.type = splitted[4]
         self.date = splitted[5]
         self.tarfet = splitted[6]
-        self.web = splitted[7]
+        self.link = splitted[7]
         self.price = splitted[8]
         self.place = splitted[9]
         self.contact = splitted[10]
