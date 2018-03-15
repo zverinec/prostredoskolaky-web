@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="cs">
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/activities.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/gridder.css">
+
+  <title>Aktivity pro středoškoláky na MU</title>
+ </head>
+
+ <body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/jquery.gridder.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <div id="wrapper">
+   <div class="container-fluid header-photo" id="header">
+    <div id="head-caption">
+     <h1>Akce pro středoškoláky<br>na MUNI</h1>
+     <a href="#about" class="btn btn-primary active">Více info</a>
+    </div>
+   </div>
+
+
+   <div class="container-flex" id="seminars">
+    <div class="container">
+     <nav class="navbar navbar-main navbar-field">
+      <span class="navbar-brand visible-xs">Obory</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-main">
+       <ul class="nav">
+        {{navbar-fields}}
+       </ul>
+      </div>
+     </nav>
+
+     <h2>Semináře</h2>
+
+     <ul class="activities-list row gridder">
+      {{seminars}}
+     </ul>
+    </div>
+   </div>
+
+
+   <div class="container-flex" id="events">
+    <div class="container events">
+     <h2>Akce</h2>
+     <ul class="activities-list row gridder">
+      {{events}}
+     </ul>
+    </div>
+   </div>
+
+  </div>
+
+  <div class="containr-flex" id="about">
+   <div class="container">
+     <h2>O akcích</h2>
+     <p>Tento web sdružuje akce Masarykovy univerzity pro středoškoláky.
+     Můžete na něm najít například korespondenční semináře všech oborů,
+     kroužky, workshopy, soutěže, letní školy...</p>
+     <p>Akce jsou k dispozici také ve formě <a href="">brožury</a>.</p>
+   </div>
+  </div>
+
+  <div class="container-flex" id="footer">
+   <div class="container">
+    <p>Tento web byl vytvořen v rámci Ádiných a Honzových dlouhých nočních večerů
+    plných útrap z html a css.</p>
+   </div>
+  </div>
+
+  <!-- Gridder content -->
+  {{gridder-content}}
+
+  <script>
+  $(function() {
+
+      // Call Gridder
+      $('.gridder').gridderExpander({
+          scroll: true,
+          scrollOffset: 350,
+          scrollTo: "panel",                  // panel or listitem
+          animationSpeed: 400,
+          animationEasing: "easeInOutExpo",
+          showNav: false,                     // Show Navigation
+          nextText: "Next",                   // Next button text
+          prevText: "Previous",               // Previous button text
+          closeText: "Close",                 // Close button text
+          onStart: function(){
+              //Gridder Inititialized
+          },
+          onContent: function(){
+              //Gridder Content Loaded
+          },
+          onClosed: function(){
+              //Gridder Closed
+          }
+      });
+
+      var options = {
+          valueNames: [ 'activity-field' ]
+      };
+      var actList = new List('events', options);
+
+      /* actList.add( { 'activity-field': 'test' } ); */
+  });
+  </script>
+
+ </body>
+</html>
