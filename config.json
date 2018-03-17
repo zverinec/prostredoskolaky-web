@@ -16,11 +16,11 @@
     "@link-color": "@brand-primary",
     "@link-hover-color": "darken(@link-color, 15%)",
     "@link-hover-decoration": "underline",
-    "@font-family-sans-serif": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
-    "@font-family-serif": "Georgia, \"Times New Roman\", Times, serif",
+    "@font-family-sans-serif": "\"Century Gothic\", Helvetica, Arial, sans-serif",
+    "@font-family-serif": "Cambria, \"Times New Roman\", Times, serif",
     "@font-family-monospace": "Menlo, Monaco, Consolas, \"Courier New\", monospace",
     "@font-family-base": "@font-family-sans-serif",
-    "@font-size-base": "16px",
+    "@font-size-base": "18px",
     "@font-size-large": "ceil((@font-size-base * 1.25))",
     "@font-size-small": "ceil((@font-size-base * 0.85))",
     "@font-size-h1": "floor((@font-size-base * 2.6))",
@@ -420,5 +420,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=47e302c27ed00cda10c6a0ac47412b01"
+  "customizerUrl": "https://getbootstrap.com/docs/3.3/customize/?id=89f82bde2af0a1ad9bf84120e025b00c"
 }
