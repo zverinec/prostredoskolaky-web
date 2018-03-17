@@ -13,6 +13,21 @@ This repository contains data fro building
  1. Run `make all`.
  2. Serve web from `build` directory.
 
+## How it works
+
+Whole web page is basically a static web page with some js. New page is
+generated from `csv` input file, which should contain data from Table of
+Activities, and html template files located in `templates` directory.
+
+The whole process in maintained by `scr/generator.py` script and `make`.
+
+## How to edit web page
+
+ * `css`, `js`, `static`: edit files in relevant directories, no build is
+   required.
+ * `html`: edit file in `templates` directory, run `make` on desired file
+   or `make all`.
+
 ## Tools
 
  * Bootstrap generated from
