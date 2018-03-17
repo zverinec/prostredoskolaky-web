@@ -1,14 +1,15 @@
 <li class="activity-out col-md-3 col-xs-12 col-sm-4 gridder-list"
     data-griddercontent="#{{gridder-div-id}}">
 <div class="activity-in">
- <img class="activity-logo" src="{{logo}}" />
+ <img class="activity-logo" src="{{logo}}" onerror="this.src='static/no-image.svg'" />
  <div class="activity-name">{{name}}</div>
  <div class="activity-date">{{duration}}</div>
 </div>
 
 
 <div id="{{gridder-div-id}}" class="gridder-content">
- <img class="activity-detail-logo col-md-3 hidden-xs col-sm-4" src="{{image}}" />
+ <img class="activity-detail-logo col-md-3 hidden-xs col-sm-4" src="{{image}}" 
+      onerror="this.src='static/no-image.svg'" />
 
  <div class="activity-detail-text col-md-9 col-xs-12 col-sm-8">
   <p>{{annotation}}</p>
