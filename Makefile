@@ -1,5 +1,5 @@
 TEMPLATES=$(wildcard templates/*.html)
-GENERATORS=$(wildcard src/*.py)
+GENERATORS=$(wildcard scr/*.py)
 ACTIVITIES=activities.csv
 
 ALL_FILES=index.html matematika.html informatika.html fyzika.html chemie.html \
