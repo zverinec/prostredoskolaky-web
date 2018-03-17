@@ -2,6 +2,9 @@
 
 [http://ks.muni.cz/](http://ks.muni.cz)
 
+Current developer version is available at
+[http://dev.ks.fi.muni.cz](http://dev.ks.fi.muni.cz/).
+
 This repository contains data fro building
 [http://ks.muni.cz](http://ks.muni.cz) web.
 
