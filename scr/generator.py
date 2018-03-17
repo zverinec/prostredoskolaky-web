@@ -5,8 +5,36 @@
 
 # TODO: describe usage
 
-import parser
+TEMPLATE_ACTIVITY = 'activity.html'
+TEMPLATE_INDEX = 'index.html'
+TEMPLATE_NAVBAR = 'navbar.html'
+TEMPLATE_DIR = 'templates'
 
+import parser
+import os
+import sys
+
+
+class ArgOpts(object):
+    def __init__(self, ofn=None, path=None):
+        self.ofn = ofn
+        self.template_dir = path
+
+
+def parse_args(argv):
+    """Parses arguments"""
+    opts = ArgOpts()
+
+    for i in range(len(argv)):
+        if argv[i] == "-o" and i < len(argv)-1:
+            opts.ofn = argv[i+1]
+            i += 1
+        elif i > 0:
+            opts.template_dir = argv[i]
+
+    return opts
+
+###############################################################################
 
 def generate_activity(template_fn, activity):
     with open(template_fn, 'r') as inp:
@@ -23,27 +51,39 @@ def generate_activity(template_fn, activity):
     return lines
 
 
-def generate_activities(template_fn, output_fn, navbar_fn, page_id,
-                        seminars, activities):
-    with open(template_fn, 'r') as inp, open(navbar_fn, 'r') as nb, open(output_fn, 'w') as out:
-        for line in inp:
-            if '{{navbar-fields}}' in line:
-                for line in nb:
-                    if page_id in line:
-                        out.write()
-                    else:
-                        out.write(line)
+def generate_activities(index_t, output, navbar_t, activity_t, seminars, events):
+    last_line_indent = 0
 
-            elif '{{seminars}}' in line:
-                for activity in seminars:
-                    out.write(generate_activity(activity) + '\n')
+    for line in index_t:
+        if '{{navbar-fields}}' in line:
+            for line in navbar_t:
+                output.write(line)
 
-            elif '{{events}}' in line:
-                for activity in events:
-                    out.write(generate_activity(activity) + '\n')
+        elif '{{seminars}}' in line:
+            for activity in seminars:
+                output.write(generate_activity(activity_t, activity) + '\n')
 
-            else:
-                out.write(line)
+        elif '{{events}}' in line:
+            for activity in events:
+                output.write(generate_activity(activity_t, activity) + '\n')
+
+        else:
+            output.write(line)
 
 if __name__ == '__main__':
-    pass
+    args = parse_args(sys.argv)
+
+    output = open(args.ofn, 'w') if args.ofn else sys.stdout
+    template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
+
+    print('Template dir: ' + template_dir)
+
+    path_index = os.path.join(template_dir, TEMPLATE_INDEX)
+    path_activity = os.path.join(template_dir, TEMPLATE_ACTIVITY)
+    path_navbar = os.path.join(template_dir, TEMPLATE_NAVBAR)
+
+    with open(path_index, 'r') as index, open(path_activity, 'r') as activity, \
+         open(path_navbar, 'r') as navbar:
+        generate_activities(index, output, navbar, activity, [], [])
+
+    # ofn will be closed automatically here
