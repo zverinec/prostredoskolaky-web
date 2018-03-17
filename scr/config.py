@@ -7,7 +7,8 @@ highlighted = [
     'ksi',
     'brkos',
     'vibuch',
-    'ibis'
+    'ibis',
+    'komar'
 ]
 
 categories = [
