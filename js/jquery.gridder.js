@@ -111,10 +111,11 @@
                 var tmp = lastOnLine;
                 while(tmp.nextSibling) {
                     if (tmp.nodeType === 1) {
-                        if (lastOnLine.offsetTop !== tmp.offsetTop)
+                        if (tmp.offsetTop && lastOnLine.offsetTop !== tmp.offsetTop)
                             break;
                         lastOnLine = tmp;
                     }
+                    console.log(tmp.offsetTop);
                     tmp = tmp.nextSibling;
                 }
 
