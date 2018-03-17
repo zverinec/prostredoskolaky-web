@@ -17,10 +17,11 @@ import config
 
 
 class ArgOpts(object):
-    def __init__(self, activities=None, ofn=None, path=None):
+    def __init__(self, activities=None, ofn=None, path=None, field=None):
         self.activities = activities
         self.ofn = ofn
         self.template_dir = path
+        self.field = field
 
 
 def parse_args(argv):
@@ -34,6 +35,9 @@ def parse_args(argv):
             i += 1
         elif argv[i] == '-o' and i < len(argv)-1:
             opts.ofn = argv[i+1]
+            i += 1
+        elif argv[i] == '-f' and i < len(argv)-1:
+            opts.field = argv[i+1]
             i += 1
         elif i > 0:
             opts.template_dir = argv[i]
@@ -61,7 +65,8 @@ def generate_activity(template, activity):
     return template
 
 
-def generate_activities(index_t, output, navbar_t, activity_t, seminars, events):
+def generate_activities(index_t, output, navbar_t, activity_t, seminars, events,
+                        field=''):
     last_line_indent = 0
 
     activity_text = activity_t.read()
@@ -73,7 +78,8 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars, events)
                 output.write(
                     s.\
                     replace('{{name}}', category).\
-                    replace('{{lower_name}}', category.lower())
+                    replace('{{lower_name}}', category.lower()).\
+                    replace('{{class}}', 'active' if category.lower() == field.lower() else '')
                 )
 
         elif '{{seminars}}' in line:
@@ -95,7 +101,7 @@ if __name__ == '__main__':
     csv = open(args.activities, 'r') if args.activities else sys.stdin
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
-    print('Template dir: ' + template_dir)
+    print('Template dir: %s' % (template_dir))
 
     path_index = os.path.join(template_dir, TEMPLATE_INDEX)
     path_activity = os.path.join(template_dir, TEMPLATE_ACTIVITY)
@@ -103,11 +109,18 @@ if __name__ == '__main__':
 
     activities = parser.parse_csv(csv)
 
-    highlighted = filter(lambda a: a.id in config.highlighted, activities)
-    normal = filter(lambda a: a.id not in config.highlighted, activities)
+    if args.field:
+        field = args.field
+        print('Generating for field: %s' % (field.lower()))
+        activities = list(filter(lambda a: field.lower() in a.fields, activities))
+    else:
+        field = ''
+
+    highlighted = list(filter(lambda a: a.id in config.highlighted, activities))
+    normal = list(filter(lambda a: a.id not in config.highlighted, activities))
 
     with open(path_index, 'r') as index, open(path_activity, 'r') as activity, \
          open(path_navbar, 'r') as navbar:
-        generate_activities(index, output, navbar, activity, highlighted, normal)
+        generate_activities(index, output, navbar, activity, highlighted, normal, field)
 
     # ofn will be closed automatically here
