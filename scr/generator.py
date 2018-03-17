@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-"""TODO: add docstring"""
+"""
+This file generates a single html page. When tun multiple times, is can
+generate all html files. When to input csv in defined, input is read from
+stdin. When no output file is defined, output is written to stdout.
 
-# TODO: describe usage
+Usage:
+generator.py -f field -o output_filename -a csv_filename template_dir
+"""
 
 TEMPLATE_ACTIVITY = 'activity.html'
 TEMPLATE_INDEX = 'index.html'
