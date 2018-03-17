@@ -6,7 +6,6 @@
 # TODO: describe usage
 
 import parser
-import re
 
 
 def generate_activity(template_fn, activity):
@@ -21,12 +20,30 @@ def generate_activity(template_fn, activity):
     lines.replace('{{annotation}}', activity.annotation)
     lines.replace('{{link}}', activity.link)
 
+    return lines
 
-def generate_html(template_fn, output_fn, activities):
-    with open(template_fn, 'r') as inp, open(output_fn, 'w') as out:
+
+def generate_activities(template_fn, output_fn, navbar_fn, page_id,
+                        seminars, activities):
+    with open(template_fn, 'r') as inp, open(navbar_fn, 'r') as nb, open(output_fn, 'w') as out:
         for line in inp:
-            out.write(line)
+            if '{{navbar-fields}}' in line:
+                for line in nb:
+                    if page_id in line:
+                        out.write()
+                    else:
+                        out.write(line)
 
+            elif '{{seminars}}' in line:
+                for activity in seminars:
+                    out.write(generate_activity(activity) + '\n')
+
+            elif '{{events}}' in line:
+                for activity in events:
+                    out.write(generate_activity(activity) + '\n')
+
+            else:
+                out.write(line)
 
 if __name__ == '__main__':
     pass
