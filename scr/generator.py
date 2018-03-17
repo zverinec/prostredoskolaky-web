@@ -10,15 +10,16 @@ Usage:
 generator.py -f field -o output_filename -a csv_filename template_dir
 """
 
-TEMPLATE_ACTIVITY = 'activity.html'
-TEMPLATE_INDEX = 'index.html'
-TEMPLATE_NAVBAR = 'navbar.html'
-TEMPLATE_DIR = 'templates'
-
 import parser
 import os
 import sys
 import config
+
+
+TEMPLATE_ACTIVITY = 'activity.html'
+TEMPLATE_INDEX = 'index.html'
+TEMPLATE_NAVBAR = 'navbar.html'
+TEMPLATE_DIR = 'templates'
 
 
 class ArgOpts(object):
@@ -53,6 +54,7 @@ def parse_args(argv):
 
 ###############################################################################
 
+
 def generate_activity(template, activity):
     template = template.replace(
         '{{name}}',
@@ -70,8 +72,8 @@ def generate_activity(template, activity):
     return template
 
 
-def generate_activities(index_t, output, navbar_t, activity_t, seminars, events,
-                        field=''):
+def generate_activities(index_t, output, navbar_t, activity_t, seminars,
+                        events, field=''):
     last_line_indent = 0
 
     activity_text = activity_t.read()
@@ -81,10 +83,12 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars, events,
             s = navbar_t.read()
             for category in config.categories:
                 output.write(
-                    s.\
-                    replace('{{name}}', category).\
-                    replace('{{lower_name}}', category.lower()).\
-                    replace('{{class}}', 'active' if category.lower() == field.lower() else '')
+                    s.
+                    replace('{{name}}', category).
+                    replace('{{lower_name}}', category.lower()).
+                    replace(
+                        '{{class}}',
+                        'active' if category.lower() == field.lower() else '')
                 )
 
         elif '{{seminars}}' in line:
@@ -117,15 +121,23 @@ if __name__ == '__main__':
     if args.field:
         field = args.field
         print('Generating for field: %s' % (field.lower()))
-        activities = list(filter(lambda a: field.lower() in a.fields, activities))
+        activities = list(
+            filter(lambda a: field.lower() in a.fields, activities)
+        )
     else:
         field = ''
 
-    highlighted = list(filter(lambda a: a.id in config.highlighted, activities))
-    normal = list(filter(lambda a: a.id not in config.highlighted, activities))
+    highlighted = list(
+        filter(lambda a: a.id in config.highlighted, activities)
+    )
+    normal = list(
+        filter(lambda a: a.id not in config.highlighted, activities)
+    )
 
-    with open(path_index, 'r') as index, open(path_activity, 'r') as activity, \
+    with open(path_index, 'r') as index, open(path_activity, 'r') as activity,\
          open(path_navbar, 'r') as navbar:
-        generate_activities(index, output, navbar, activity, highlighted, normal, field)
+        generate_activities(
+            index, output, navbar, activity, highlighted, normal, field
+        )
 
     # ofn will be closed automatically here
