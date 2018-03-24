@@ -128,8 +128,9 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
 if __name__ == '__main__':
     args = parse_args(sys.argv)
 
-    output = open(args.ofn, 'w') if args.ofn else sys.stdout
-    csv = open(args.activities, 'r') if args.activities else sys.stdin
+    output = open(args.ofn, 'w', encoding='utf-8') if args.ofn else sys.stdout
+    csv = open(args.activities, 'r', encoding='utf-8') \
+          if args.activities else sys.stdin
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
     print('Template dir: %s' % (template_dir))
@@ -157,8 +158,9 @@ if __name__ == '__main__':
         filter(lambda a: not a.highlighted, activities)
     )
 
-    with open(path_index, 'r') as index, open(path_activity, 'r') as activity,\
-         open(path_navbar, 'r') as navbar:
+    with open(path_index, 'r', encoding='utf-8') as index,\
+         open(path_activity, 'r', encoding='utf-8') as activity,\
+         open(path_navbar, 'r', encoding='utf-8') as navbar:
         generate_activities(
             index, output, navbar, activity, highlighted, normal, field
         )

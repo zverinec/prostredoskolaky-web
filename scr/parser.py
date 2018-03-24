@@ -80,7 +80,7 @@ def parse_csv(f):
 
 
 def parse_file(fn):
-    with open(fn, 'r') as f:
+    with open(fn, 'r', encoding='utf-8') as f:
         return parse_csv(f)
 
 
@@ -88,14 +88,14 @@ if __name__ == '__main__':
     args = parse_args(sys.argv)
 
     if args.ifn != "":
-        fi = open(args.ifn, 'r')
+        fi = open(args.ifn, 'r', encoding='utf-8')
     else:
         fi = sys.stdin
 
     res = parse_csv(fi)
 
     if args.ofn != "":
-        fo = open(args.ofn, 'w')
+        fo = open(args.ofn, 'w', encoding='utf-8')
     else:
         fo = sys.stdout
 
