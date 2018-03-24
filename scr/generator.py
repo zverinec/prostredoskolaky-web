@@ -22,6 +22,7 @@ TEMPLATE_NAVBAR = 'navbar.html'
 TEMPLATE_DIR = 'templates'
 IMAGE_DIR = os.path.join('static', 'drive-data')
 
+
 class ArgOpts(object):
     def __init__(self, activities=None, ofn=None, path=None, field=None):
         self.activities = activities
@@ -135,6 +136,7 @@ if __name__ == '__main__':
     path_navbar = os.path.join(template_dir, TEMPLATE_NAVBAR)
 
     activities = parser.parse_csv(csv)
+    activities = list(filter(lambda a: a.id != '-' and a.id != '', activities))
 
     if args.field:
         field = args.field
