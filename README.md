@@ -16,7 +16,9 @@ This repository contains data fro building
 ## Howto update repo from gDrive
 
  1. Download table of activities into `activities.csv`.
- 2. Download folder `web-data` into `static/drive-data` folder.
+ 2. Download folder `web-data` as zip file and unzip it into `static/drive-data`
+    folder. The unzip could be done automatically by calling `unzip-web-data.sh`
+    script.
  3. Build web according to steps described in previous section.
  4. Commit new static data into repo.
 
