@@ -84,7 +84,16 @@
 
                 /* ENSURES THE CORRECT BLOC IS ACTIVE */
                 if (!myself.hasClass("selectedItem")) {
-                    _this.find(".selectedItem").removeClass("selectedItem");
+                    // Close all gridders.
+                    // Code edited by Jan Horacek
+                    if ($(".selectedItem").length) {
+                        $(".selectedItem").removeClass("selectedItem");
+
+                        var other = $(".hasSelectedItem");
+                        other.find(".gridder-show").remove();
+                        other[0].visible = false;
+                        other.removeClass("hasSelectedItem");
+                    }
                     myself.addClass("selectedItem");
                 } else {
                     // THE SAME IS ALREADY OPEN, LET"S CLOSE IT
