@@ -20,7 +20,7 @@ TEMPLATE_ACTIVITY = 'activity.html'
 TEMPLATE_INDEX = 'index.html'
 TEMPLATE_NAVBAR = 'navbar.html'
 TEMPLATE_DIR = 'templates'
-
+IMAGE_DIR = os.path.join('static', 'drive-data')
 
 class ArgOpts(object):
     def __init__(self, activities=None, ofn=None, path=None, field=None):
@@ -63,8 +63,26 @@ def generate_activity(template, activity):
         else activity.full_name
     )
     template = template.replace('{{duration}}', activity.date)
-    template = template.replace('{{logo}}', 'static/%s.svg' % (activity.id))
-    template = template.replace('{{image}}', 'static/%s.svg' % (activity.id))
+
+    # Look for a logo and a photo
+    logo = None
+    photo = None
+    for fn in os.listdir(IMAGE_DIR):
+        if fn.startswith(activity.id + '_logo'):
+            logo = fn
+        elif fn.startswith(activity.id + '_photo'):
+            photo = fn
+
+    if logo:
+        template = template.replace('{{logo}}', os.path.join(IMAGE_DIR, logo))
+    else:
+        template = template.replace('{{logo}}', 'static/no-image.svg')
+
+    if photo:
+        template = template.replace('{{image}}', os.path.join(IMAGE_DIR, photo))
+    else:
+        template = template.replace('{{image}}', 'static/no-image.svg')
+
     template = template.replace('{{gridder-div-id}}', activity.id)
     template = template.replace('{{annotation}}', activity.annotation)
     template = template.replace('{{link}}', activity.link)
