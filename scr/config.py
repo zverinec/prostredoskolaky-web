@@ -9,5 +9,6 @@ categories = [
     'Fyzika',
     'Chemie',
     'Biologie',
-    'Geologie'
+    'Geologie',
+    'Ekonomie',
 ]
