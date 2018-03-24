@@ -20,6 +20,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="js/jquery.gridder.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/shuffle.js"></script>
 
   <div id="wrapper">
    <div class="container-fluid header-photo" id="header">
@@ -50,7 +51,7 @@
 
      <h2>Semináře</h2>
 
-     <ul class="activities-list row gridder">
+     <ul id="seminars-list" class="activities-list row gridder">
       {{seminars}}
      </ul>
     </div>
@@ -60,7 +61,7 @@
    <div class="container-flex" id="events">
     <div class="container events">
      <h2>Akce</h2>
-     <ul class="activities-list row gridder">
+     <ul id="events-list" class="activities-list row gridder">
       {{events}}
      </ul>
     </div>
@@ -87,6 +88,8 @@
 
   <script>
   $(function() {
+      $('#seminars-list li').shuffle();
+      $('#events-list li').shuffle();
 
       // Call Gridder
       $('.gridder').gridderExpander({
@@ -110,9 +113,7 @@
           }
       });
 
-      var options = {
-          valueNames: [ 'activity-field' ]
-      };
+
   });
   </script>
 
