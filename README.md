@@ -13,6 +13,13 @@ This repository contains data fro building
  1. Run `make all`.
  2. Serve web from `build` directory.
 
+## Howto update repo from gDrive
+
+ 1. Download table of activities into `activities.csv`.
+ 2. Download folder `web-data` into `static/drive-data` folder.
+ 3. Build web according to steps described in previous section.
+ 4. Commit new static data into repo.
+
 ## How it works
 
 Whole web page is basically a static web page with some js. New page is
