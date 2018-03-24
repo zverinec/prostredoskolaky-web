@@ -124,7 +124,6 @@
                             break;
                         lastOnLine = tmp;
                     }
-                    console.log(tmp.offsetTop);
                     tmp = tmp.nextSibling;
                 }
 
