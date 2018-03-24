@@ -153,10 +153,10 @@ if __name__ == '__main__':
         field = ''
 
     highlighted = list(
-        filter(lambda a: a.id in config.highlighted, activities)
+        filter(lambda a: a.highlighted, activities)
     )
     normal = list(
-        filter(lambda a: a.id not in config.highlighted, activities)
+        filter(lambda a: not a.highlighted, activities)
     )
 
     with open(path_index, 'r') as index, open(path_activity, 'r') as activity,\

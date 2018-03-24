@@ -3,14 +3,6 @@
 
 """This file contains configuration of activities."""
 
-highlighted = [
-    'ksi',
-    'brkos',
-    'vibuch',
-    'ibis',
-    'komar'
-]
-
 categories = [
     'Matematika',
     'Informatika',
