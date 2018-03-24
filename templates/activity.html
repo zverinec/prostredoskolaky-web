@@ -8,8 +8,10 @@
 
 
 <div id="{{gridder-div-id}}" class="gridder-content">
- <img class="activity-detail-logo col-md-3 hidden-xs col-sm-4" src="{{image}}" 
-      onerror="this.src='static/no-image.svg'" />
+ <a href="{{link}}" class="col-md-3 hidden-xs col-sm-4 activity-image-link">
+  <img class="activity-detail-logo" src="{{image}}"
+       onerror="this.src='static/no-image.svg'" />
+ </a>
 
  <div class="activity-detail-text col-md-9 col-xs-12 col-sm-8">
   <p>{{annotation}}</p>

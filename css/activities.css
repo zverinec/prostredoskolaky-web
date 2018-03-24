@@ -48,6 +48,8 @@ h2 {
 
 .activity-detail-logo {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .activity-name {
