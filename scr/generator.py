@@ -61,9 +61,7 @@ def parse_args(argv):
 def generate_activity(template, activity):
     template = template.replace(
         '{{name}}',
-        activity.short_name
-        if activity.short_name != '-' and activity.short_name != '--'
-        else activity.full_name
+        activity.full_name
     )
     template = template.replace('{{duration}}', activity.date)
 
