@@ -14,6 +14,7 @@ import parser
 import os
 import sys
 import config
+import datetime
 
 
 TEMPLATE_ACTIVITY = 'activity.html'
@@ -52,6 +53,7 @@ def parse_args(argv):
         i += 1
 
     return opts
+
 
 ###############################################################################
 
@@ -98,6 +100,9 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
     activity_text = activity_t.read()
 
     for line in index_t:
+        line = line.replace('{{build_datetime}}',
+                            datetime.datetime.now().strftime("%d. %m. %Y %H:%M"))
+
         if '{{navbar-fields}}' in line:
             s = navbar_t.read()
             for category in config.categories:
