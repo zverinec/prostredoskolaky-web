@@ -7,7 +7,7 @@
 }
 
 .header-photo {
-    height: 420px;
+    height: 430px;
     background: url('/static/header.png') center center no-repeat scroll;
     background-size: cover;
 }
