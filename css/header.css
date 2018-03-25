@@ -14,7 +14,7 @@
 
 #head-caption {
     position: absolute;
-    top: 100px;
+    top: 105px;
     left: 50%;
 }
 
@@ -23,7 +23,11 @@ h1 {
     margin-bottom: 10px;
     color: #054899;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 43px;
+}
+
+.subcaption {
+    font-size: 35px;
 }
 
 h1 > a {
