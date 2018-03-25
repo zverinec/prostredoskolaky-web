@@ -33,3 +33,12 @@ h1 {
 h1 > a {
     color: #054899;
 }
+
+.btn-more-info {
+    margin-top: 10px;
+    background-color: Transparent; !important;
+    border: 3px solid #054899;
+    color: #054899;
+    font-weight: bold;
+    padding: 1px 12px;
+}
