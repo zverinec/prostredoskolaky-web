@@ -99,7 +99,7 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
 
     for line in index_t:
         line = line.replace('{{build_datetime}}',
-                            datetime.datetime.now().strftime("%d. %m. %Y %H:%M"))
+                            datetime.datetime.now().strftime("%-d. %-m. %Y"))
 
         if '{{navbar-fields}}' in line:
             s = navbar_t.read()
