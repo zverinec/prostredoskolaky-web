@@ -26,6 +26,10 @@ h1 {
     font-size: 43px;
 }
 
+h1 > a:hover {
+    text-decoration: none;
+}
+
 .subcaption {
     font-size: 35px;
 }
