@@ -65,6 +65,17 @@ h2 {
 
 }
 
+.activity-detail-link {
+    background-color: #0087e2;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.activity-detail-link:hover {
+    color: #ffce40;
+}
+
 @media screen and (min-width: 992px) {
     .activity-detail-text {
         font-size: 120%;
