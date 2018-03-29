@@ -55,3 +55,7 @@ h1 > a {
     font-weight: bold;
     padding: 1px 12px;
 }
+
+.btn-more-info:hover {
+    border: 3px solid white;
+}
