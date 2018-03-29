@@ -26,8 +26,15 @@ h1 {
     font-size: 43px;
 }
 
-h1 > a:hover {
+#header a:hover {
     text-decoration: none;
+    color: #054899;
+}
+
+#header > a {
+    width: 100%;
+    height: 100%;
+    display:block;
 }
 
 .subcaption {
