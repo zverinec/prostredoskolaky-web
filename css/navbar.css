@@ -24,13 +24,13 @@
 }
 
 .navbar-main li > a:focus {
-    color: #fff;
     background-color: #ffce40;
+    color: #054899;
 }
 
 .navbar-main li.active > a {
-    color: #fff;
     background-color: #ffce40;
+    color: #054899;
 }
 
 .navbar-field {
