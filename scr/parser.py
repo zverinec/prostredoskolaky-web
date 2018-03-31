@@ -55,7 +55,7 @@ class Activity(object):
         self.place = splitted[10]
         self.contact = splitted[11]
         self.highlighted = (splitted[12].lower() == 'ano')
-        self.annotation = splitted[17]
+        self.annotation = splitted[16]
 
     def __str__(self):
         return self.id
