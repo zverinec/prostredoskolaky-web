@@ -8,11 +8,18 @@ html,body{
     min-height: 100%;
 }
 
-#about {
+.about {
     padding-top: 30px;
     padding-bottom: 30px;
-    background-color: #efefef;
     text-align: center;
+}
+
+#about-index {
+    background-color: #efefef;
+}
+
+#about-field {
+    background-color: #dde9ed;
 }
 
 p {

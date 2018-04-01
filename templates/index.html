@@ -62,7 +62,7 @@
       </div>
      </nav>
 
-     <h2>Vlajkové akce</h2>
+     {{events_header}}
 
      <ul id="seminars-list" class="activities-list row gridder">
       {{seminars}}
@@ -71,6 +71,7 @@
    </div>
 
 
+   {{#if events}}
    <div class="container-flex" id="events">
     <div class="container events">
      <h2>Další akce</h2>
@@ -79,10 +80,11 @@
      </ul>
     </div>
    </div>
+   {{/if}}
 
   </div>
 
-  <div class="containr-flex" id="about">
+  <div class="container-flex about" id="{{about-id}}">
    <div class="container">
      <h2>O akcích</h2>
      <p>Tento web sdružuje akce Masarykovy univerzity pro středoškoláky.

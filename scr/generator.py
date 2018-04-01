@@ -94,6 +94,7 @@ def generate_activity(template, activity):
 def generate_activities(index_t, output, navbar_t, activity_t, seminars,
                         events, field=''):
     last_line_indent = 0
+    write = True
 
     activity_text = activity_t.read()
 
@@ -101,7 +102,13 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
         line = line.replace('{{build_datetime}}',
                             datetime.datetime.now().strftime("%-d. %-m. %Y"))
 
-        if '{{navbar-fields}}' in line:
+        if '{{#if events}}' in line:
+            write = (bool)(events)
+
+        elif '{{/if}}' in line:
+            write = True
+
+        elif '{{navbar-fields}}' in line:
             s = navbar_t.read()
             for category in config.categories:
                 output.write(
@@ -121,7 +128,20 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
             for activity in events:
                 output.write(generate_activity(activity_text, activity) + '\n')
 
-        else:
+        elif '{{events_header}}' in line:
+            if field == '':
+                output.write(line.replace(
+                    '{{events_header}}',
+                    '<h2>Vlajkové akce</h2>'
+                ))
+
+        elif '{{about-id}}' in line:
+            if field == '':
+                output.write(line.replace('{{about-id}}', 'about-index'))
+            else:
+                output.write(line.replace('{{about-id}}', 'about-field'))
+
+        elif write:
             output.write(line)
 
 
@@ -145,18 +165,19 @@ if __name__ == '__main__':
     if args.field:
         field = args.field
         print('Generating for field: %s' % (field.lower()))
-        activities = list(
+        highlighted = list(
             filter(lambda a: field.lower() in a.fields, activities)
         )
+        normal = []
     else:
         field = ''
 
-    highlighted = list(
-        filter(lambda a: a.highlighted, activities)
-    )
-    normal = list(
-        filter(lambda a: not a.highlighted, activities)
-    )
+        highlighted = list(
+            filter(lambda a: a.highlighted, activities)
+        )
+        normal = list(
+            filter(lambda a: not a.highlighted, activities)
+        )
 
     with open(path_index, 'r', encoding='utf-8') as index,\
          open(path_activity, 'r', encoding='utf-8') as activity,\
