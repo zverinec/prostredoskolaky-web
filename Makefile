@@ -1,8 +1,8 @@
 TEMPLATES=$(wildcard templates/*.html)
 GENERATORS=$(wildcard scr/*.py)
 ACTIVITIES=activities.csv
-GDRIVE_DATA=$(wildcard static/drive-data/drive-data/*)
-STATIC_DATA=$(wildcard static/drive-data/*)
+GDRIVE_DATA=$(wildcard static/drive-data/*)
+STATIC_DATA=$(wildcard static/*)
 
 ALL_FILES=index.html matematika.html informatika.html fyzika.html chemie.html \
           biologie.html geologie.html ekonomie.html
