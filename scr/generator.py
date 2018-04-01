@@ -87,6 +87,10 @@ def generate_activity(template, activity):
     template = template.replace('{{gridder-div-id}}', activity.id)
     template = template.replace('{{annotation}}', activity.annotation)
     template = template.replace('{{link}}', activity.link)
+    template = template.replace(
+        '{{activity-type}}',
+        'activity-highlighted' if activity.highlighted else 'activity-normal'
+    )
 
     return template
 
