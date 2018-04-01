@@ -15,3 +15,15 @@
 #footer-right {
     float: right;
 }
+
+@media screen and (max-width: 991px) {
+    .brochure-image {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .brochure-image {
+        width: 60%;
+    }
+}
+
