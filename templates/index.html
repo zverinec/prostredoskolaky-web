@@ -123,7 +123,8 @@
 
   <script>
   $(function() {
-      $('#seminars-list li').shuffle();
+      $('#seminars-list li.activity-highlighted').shuffle();
+      $('#seminars-list li.activity-normal').shuffle();
       $('#events-list li').shuffle();
 
       // Call Gridder
