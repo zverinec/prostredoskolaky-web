@@ -172,6 +172,7 @@ if __name__ == '__main__':
         highlighted = list(
             filter(lambda a: field.lower() in a.fields, activities)
         )
+        highlighted.sort(key=lambda a: not a.highlighted)
         normal = []
     else:
         field = ''
