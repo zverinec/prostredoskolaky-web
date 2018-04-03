@@ -126,6 +126,10 @@ h2 {
     background: url('/static/arrows-hover.svg') center center no-repeat;
 }
 
+.selectedItem .activity-arrows {
+    background: url('/static/arrows-hover.svg') center center no-repeat;
+}
+
 .activity-arrows-hidden:after {
     /* load hover image when page loaded, not after hover */
     display:none;
