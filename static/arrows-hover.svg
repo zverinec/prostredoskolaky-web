@@ -11,7 +11,7 @@
    data-name="Vrstva 1"
    viewBox="0 0 29.014071 22.472954"
    version="1.1"
-   sodipodi:docname="favicon_Kreslicí plátno 1.svg"
+   sodipodi:docname="arrows.svg"
    width="29.014071"
    height="22.472954"
    inkscape:version="0.92.1 r15371">
@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>favicon</dc:title>
+        <dc:title>sipky</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,7 +45,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="7.375"
-     inkscape:cx="-5.0861855"
+     inkscape:cx="14.507035"
      inkscape:cy="11.229962"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -54,20 +54,20 @@
   <defs
      id="defs4">
     <style
-       id="style2">.cls-1{fill:none;stroke:#c9c9c9;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
+       id="style2">.cls-1{fill:none;stroke:#4fc3fd;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px;}</style>
   </defs>
   <title
-     id="title6">favicon</title>
+     id="title6">sipky</title>
   <polyline
      class="cls-1"
      points="28.99 6.27 16 16.15 3.01 6.27"
      id="polyline8"
-     style="fill:none;stroke:#c9c9c9;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:none;stroke:#4fc3fd;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
      transform="translate(-1.4929652,-4.7570077)" />
   <polyline
      class="cls-1"
      points="28.99 15.85 16 25.73 3.01 15.85"
      id="polyline10"
-     style="fill:none;stroke:#c9c9c9;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:none;stroke:#4fc3fd;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
      transform="translate(-1.4929652,-4.7570077)" />
 </svg>

@@ -119,4 +119,18 @@ h2 {
     bottom: 0;
     left: 0;
     right: 0;
+    background: url('/static/arrows.svg') center center no-repeat;
+}
+
+.activity-arrows-hidden {
+    background: url('/static/arrows-hover.svg') center center no-repeat;
+}
+
+.activity-arrows-hidden:after {
+    /* load hover image when page loaded, not after hover */
+    display:none;
+}
+
+.activity-arrows:hover {
+    background: url('/static/arrows-hover.svg') center center no-repeat;
 }
