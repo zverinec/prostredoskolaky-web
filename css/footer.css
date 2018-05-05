@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 650px) {
     #footer-flex {
         justify-content: center !important;
     }
@@ -88,4 +88,9 @@
 
 #logo-esf:hover {
     background-image: url("../static/logo/esf-hover.svg");
+}
+
+.logos-invisible {
+    opacity: 0.001;
+    height: 1px;
 }
