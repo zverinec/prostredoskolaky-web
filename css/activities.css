@@ -122,3 +122,17 @@ h2 {
     /* load hover image when page loaded, not after hover */
     display:none;
 }
+
+.orgs {
+   font-family: Cambria, "Times New Roman", Times, serif;
+   margin-bottom: 5px;
+}
+
+.orgs a {
+   color: #a09f9e;
+}
+
+.orgs a:hover {
+   text-decoration:none;
+   color: #6e6c6b;
+}
