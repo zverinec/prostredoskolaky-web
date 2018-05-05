@@ -1,19 +1,31 @@
 #footer {
     background-color: #3f3f3f;
     color: #bbb;
-    text-align: center;
+}
+
+#footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width: 630px) {
+    #footer-flex {
+        justify-content: center !important;
+    }
+
+    #footer-text {
+        text-align: center !important;
+    }
 }
 
 #footer p {
     margin: 10px;
 }
 
-#footer-left {
-    float: left;
-}
-
-#footer-right {
-    float: right;
+#footer-text {
+    text-align: right;
 }
 
 @media screen and (max-width: 1199px) {
@@ -30,4 +42,50 @@
 
 #footer a {
     color: #bbb;
+}
+
+.logos {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logos a {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+#logo-mu {
+    background-image: url("../static/logo/mu.svg");
+}
+
+#logo-prf {
+    background-image: url("../static/logo/prf.svg");
+}
+
+#logo-fi {
+    background-image: url("../static/logo/fi.svg");
+}
+
+#logo-esf {
+    background-image: url("../static/logo/esf.svg");
+}
+
+#logo-mu:hover {
+    background-image: url("../static/logo/mu-hover.svg");
+}
+
+#logo-prf:hover {
+    background-image: url("../static/logo/prf-hover.svg");
+}
+
+#logo-fi:hover {
+    background-image: url("../static/logo/fi-hover.svg");
+}
+
+#logo-esf:hover {
+    background-image: url("../static/logo/esf-hover.svg");
 }
