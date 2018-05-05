@@ -1,12 +1,9 @@
 # Web of activities at MU for high-school students
 
-[http://ks.muni.cz/](http://ks.muni.cz)
+[http://prostredoskolaky.muni.cz/](http://prostredoskolaky.muni.cz)
 
-Current developer version is available at
+Developer version is available at
 [http://dev.ks.fi.muni.cz](http://dev.ks.fi.muni.cz/).
-
-This repository contains data fro building
-[http://ks.muni.cz](http://ks.muni.cz) web.
 
 ## Howto build web from repo
 
