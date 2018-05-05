@@ -35,6 +35,29 @@ def parse_args(argv):
     return opts
 
 
+class Org(object):
+    """Represents a single oganisator of an activity"""
+
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
+
+    def __str__(self):
+        return self.name + ', ' + self.url
+
+    __repr__ = __str__
+
+
+def parse_orgs(orgs):
+    res = []
+    for org in orgs.split(', '):
+        org_splitted = org.split(': ')
+        if len(org_splitted) == 2:
+            res.append(Org(org_splitted[0], org_splitted[1]))
+
+    return res
+
+
 class Activity(object):
     """Represents single activity"""
 
@@ -45,17 +68,18 @@ class Activity(object):
         self.id = splitted[0]
         self.short_name = splitted[2]
         self.full_name = splitted[3]
-        self.fields = splitted[4].split(',')
+        self.orgs = parse_orgs(splitted[4])
+        self.fields = splitted[5].split(',')
         self.fields = list(map(lambda s: s.strip(), self.fields))
-        self.type = splitted[5]
-        self.date = splitted[6]
-        self.tarfet = splitted[7]
-        self.link = splitted[8]
-        self.price = splitted[9]
-        self.place = splitted[10]
-        self.contact = splitted[11]
-        self.highlighted = (splitted[12].lower() == 'ano')
-        self.annotation = splitted[16]
+        self.type = splitted[6]
+        self.date = splitted[7]
+        self.tarfet = splitted[8]
+        self.link = splitted[9]
+        self.price = splitted[10]
+        self.place = splitted[11]
+        self.contact = splitted[12]
+        self.highlighted = (splitted[13].lower() == 'ano')
+        self.annotation = splitted[17]
 
     def __str__(self):
         return self.id
