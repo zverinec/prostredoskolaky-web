@@ -50,7 +50,7 @@ class Org(object):
 
 def parse_orgs(orgs):
     res = []
-    for org in orgs.split(', '):
+    for org in orgs.split('; '):
         org_splitted = org.split(': ')
         if len(org_splitted) == 2:
             res.append(Org(org_splitted[0], org_splitted[1]))

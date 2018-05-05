@@ -92,6 +92,11 @@ def generate_activity(template, activity):
         'activity-highlighted' if activity.highlighted else 'activity-normal'
     )
 
+    text = ''
+    for org in activity.orgs:
+        text += '<a href="%s" target="_blank">%s</a>, ' % (org.url, org.name)
+    template = template.replace('{{orgs}}', text[:-2])
+
     return template
 
 
