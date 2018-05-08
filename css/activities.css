@@ -91,13 +91,19 @@ h2 {
 @media screen and (min-width: 1200px) {
     .activity-detail-text {
         font-size: 120%;
-        margin: 20px;
+        margin: 15px;
     }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
     .activity-detail-text {
         margin: 10px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .activity-detail-text p {
+        margin-bottom: 8px;
     }
 }
 
