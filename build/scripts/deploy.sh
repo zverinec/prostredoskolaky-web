@@ -8,7 +8,7 @@ if [ $? -eq 0 ]; then
 fi
 
 if [ $? -eq 0 ]; then
-	OUTPUT+=$(cd .. && make all 2>&1)$'\n\n'
+	OUTPUT+=$(cd ../.. && make all 2>&1)$'\n\n'
 fi
 
 echo "$OUTPUT" | mail "me@apophis.cz" -s "[prostredoskolaky-web] Deploy status"
