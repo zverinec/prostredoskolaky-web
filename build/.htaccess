@@ -2,6 +2,6 @@
 	AddHandler cgi-script .sh
 	AuthType Basic
 	AuthName "Restricted Content!"
-	AuthUserFile .htpasswd
+	AuthUserFile prostredoskolaky.htpasswd
 	Require valid-user
 </FilesMatch>
