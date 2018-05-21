@@ -186,5 +186,15 @@
   });
   </script>
 
+  <script type="text/javascript">
+      $('.btn-more-info').on('click', function(e) {
+          e.preventDefault();
+          let target = $("#about-index");
+          $('html, body').stop().animate({
+              scrollTop: target.offset().top
+          }, 1000);
+      });
+  </script>
+
  </body>
 </html>
