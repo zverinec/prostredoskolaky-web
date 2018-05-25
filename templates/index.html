@@ -189,7 +189,7 @@
   <script type="text/javascript">
       $('.btn-more-info').on('click', function(e) {
           e.preventDefault();
-          let target = $("#about-index");
+          let target = $("#{{about-id}}");
           $('html, body').stop().animate({
               scrollTop: target.offset().top
           }, 1000);
