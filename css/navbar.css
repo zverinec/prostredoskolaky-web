@@ -77,3 +77,7 @@
 .navbar-toggle {
     border-color: #0087e2;
 }
+
+.navbar-header {
+    margin-bottom: 10px;
+}
