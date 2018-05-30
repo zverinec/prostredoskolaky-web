@@ -1,6 +1,6 @@
 <li class="activity-out col-12 col-md-3 col-xxs-12 col-xs-6 col-sm-4 gridder-list {{activity-type}}"
-    data-griddercontent="#{{gridder-div-id}}">
-<div class="activity-in">
+    data-griddercontent="#{{id}}-gridder" id={{id}}>
+<div class="activity-in" name="{{id}}">
  <img class="activity-logo" src="{{logo}}" alt="Logo aktivity" onerror="this.src='static/no-image.svg'" />
  <div class="activity-name">{{name}}</div>
  <div class="activity-date">{{duration}}</div>
@@ -8,7 +8,7 @@
 </div>
 
 
-<div id="{{gridder-div-id}}" class="gridder-content">
+<div id="{{id}}-gridder" class="gridder-content">
  <a href="{{link}}" target="_blank" class="col-md-3 hidden-xs col-sm-4 activity-image-link">
   <img class="activity-detail-logo" src="{{image}}" alt="Fotografie aktivity"
        onerror="this.src='static/no-image.svg'" />

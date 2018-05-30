@@ -84,7 +84,7 @@ def generate_activity(template, activity):
     else:
         template = template.replace('{{image}}', 'static/no-image.svg')
 
-    template = template.replace('{{gridder-div-id}}', activity.id)
+    template = template.replace('{{id}}', activity.id)
     template = template.replace('{{annotation}}', activity.annotation)
     template = template.replace('{{link}}', activity.link)
     template = template.replace(
