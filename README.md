@@ -2,9 +2,6 @@
 
 [http://prostredoskolaky.muni.cz/](http://prostredoskolaky.muni.cz)
 
-Developer version is available at
-[http://dev.ks.fi.muni.cz](http://dev.ks.fi.muni.cz/).
-
 ## Howto build web from repo
 
  1. Run `make all`.
