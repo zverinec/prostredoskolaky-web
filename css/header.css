@@ -9,14 +9,14 @@
 }
 
 .header-photo {
-    height: 430px;
+    height: 360px;
     background: url('/static/header.png') center center no-repeat scroll;
     background-size: cover;
 }
 
 #head-caption {
     position: absolute;
-    top: 135px;
+    top: 115px;
 }
 
 @media screen and (min-width: 768px) {
@@ -76,18 +76,18 @@ h1 > a {
 #stitek {
     position: absolute;
     top: 0px;
-    height: 140px;
+    height: 120px;
 }
 
-@media screen and (max-width: 1480px) {
+@media screen and (max-width: 1260px) {
     #stitek {
         left: 50px;
     }
 }
 
-@media screen and (min-width: 1481px) {
+@media screen and (min-width: 1261px) {
     #stitek {
-        left: calc(50% - 680px);
+        left: calc(50% - 570px);
     }
 }
 
