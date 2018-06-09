@@ -31,6 +31,12 @@ The whole process in maintained by `scr/generator.py` script and `make`.
  * `html`: edit file in `templates` directory, run `make` on desired file
    or `make all`.
 
+## Auto-deployment
+
+When pushed to *master* branch of the repository on Github, new changes are
+automatically deployed to the production web. Please, do not deploy the web
+manually on the production server, you may break auto-deployment.
+
 ## Tools
 
  * Bootstrap generated from
