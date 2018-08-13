@@ -1,6 +1,9 @@
 #footer {
     background-color: #3f3f3f;
     color: #bbb;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 #footer-flex {
