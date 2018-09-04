@@ -32,7 +32,7 @@ html,body {
     background-color: #dde9ed;
 }
 
-p {
+p, ul, ol {
     font-family: Cambria, "Times New Roman", Times, serif;
 }
 
