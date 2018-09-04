@@ -14,6 +14,12 @@
     background-size: cover;
 }
 
+.header-photo-soc {
+    height: 360px;
+    background: url('/static/header-soc.png') center center no-repeat scroll;
+    background-size: cover;
+}
+
 #head-caption {
     position: absolute;
     top: 115px;
