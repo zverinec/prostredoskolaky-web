@@ -16,6 +16,15 @@
     background-color: white;
 }
 
+#center-buttons {
+    text-align: center;
+}
+
+#center-buttons>a.btn {
+    position: relative;
+    margin: 15px;
+}
+
 h2 {
     color: #054899;
     text-align: center;
