@@ -10,6 +10,12 @@
     background-color: #dde9ed;
 }
 
+#white {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: white;
+}
+
 h2 {
     color: #054899;
     text-align: center;
