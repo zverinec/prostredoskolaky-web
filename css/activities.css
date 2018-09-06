@@ -97,6 +97,7 @@ h2 {
     margin-bottom: 15px;
     position: absolute;
     bottom: 0;
+    font-family: "Century Gothic", Helvetica, Arial, sans-serif;
 }
 
 .activity-detail-link:hover {
