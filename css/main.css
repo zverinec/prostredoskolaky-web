@@ -6,6 +6,30 @@ html,body {
     font-family: Cambria, "Times New Roman", Times, serif;
 }
 
+@font-face {
+    font-family: "Century Gothic";
+    src: url("fonts/GOTHIC.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("fonts/GOTHICB.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("fonts/GOTHICI.ttf") format("truetype");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url("fonts/GOTHICBI.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
 #wrapper {
     position: relative;
     min-height: 100%;
