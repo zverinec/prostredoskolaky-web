@@ -10,7 +10,7 @@
 .navbar-main li {
     display: inline-block;
     float: none;
-    background-color: #0087e2;
+    background-color: #486afc;
     color: #fff;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .navbar-main li > a:hover {
-    background-color: #0087e2;
+    background-color: #486afc;
     box-shadow: inset 0 -5px 0 0 #ffce40;
 }
 
@@ -54,7 +54,7 @@
     margin: 0 auto;
     width: 0;
     height: 0;
-    border-top: solid 15px #0087e2;
+    border-top: solid 15px #486afc;
     border-left: solid 15px transparent;
     border-right: solid 15px transparent;
 }
@@ -72,11 +72,11 @@
 }
 
 .icon-bar {
-    background-color: #0087e2;
+    background-color: #486afc;
 }
 
 .navbar-toggle {
-    border-color: #0087e2;
+    border-color: #486afc;
 }
 
 .navbar-header {
