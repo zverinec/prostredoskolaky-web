@@ -61,25 +61,27 @@ def parse_orgs(orgs):
 class Activity(object):
     """Represents single activity"""
 
-    def __init__(self, splitted):
-        self._parse_from_line(splitted)
+    def __init__(self, splitted, column_map):
+        self._parse_from_line(splitted, column_map)
 
-    def _parse_from_line(self, splitted):
-        self.id = splitted[0]
-        self.short_name = splitted[2]
-        self.full_name = splitted[3]
-        self.orgs = parse_orgs(splitted[4])
-        self.fields = splitted[5].split(',')
+    def _parse_from_line(self, splitted, column_map):
+        cm = column_map
+
+        self.id = splitted[cm['header']]
+        self.short_name = splitted[cm['short-name']]
+        self.full_name = splitted[cm['full-name']]
+        self.orgs = parse_orgs(splitted[cm['orgs']])
+        self.fields = splitted[cm['fields']].split(',')
         self.fields = list(map(lambda s: s.strip(), self.fields))
-        self.type = splitted[6]
-        self.date = splitted[7]
-        self.tarfet = splitted[8]
-        self.link = splitted[9]
-        self.price = splitted[10]
-        self.place = splitted[11]
-        self.contact = splitted[12]
-        self.highlighted = (splitted[13].lower() == 'ano')
-        self.annotation = splitted[17]
+        self.type = splitted[cm['type']]
+        self.date = splitted[cm['date']]
+        self.target = splitted[cm['target']]
+        self.link = splitted[cm['link']]
+        self.price = splitted[cm['price']]
+        self.place = splitted[cm['place']]
+        self.contact = splitted[cm['contact']]
+        self.highlighted = (splitted[cm['highlighted']].lower() == 'ano')
+        self.annotation = splitted[cm['annotation']]
 
     def __str__(self):
         return self.id
@@ -92,13 +94,19 @@ def parse_csv(f):
     out = []
 
     reader = csv.reader(f, delimiter=',', quotechar='"')
-    for i, line in enumerate(reader):
-        if i < 3:
-            continue
-        if len(line) < 16 or line[0] == '' or line[0] == '-' or line[0] == '':
-            continue
+    column_map = {}
+    header_loaded = False
 
-        out.append(Activity(line))
+    for i, line in enumerate(reader):
+        if line[0].lower() == 'header':
+            for coli, name in enumerate(line):
+                column_map[name.lower()] = coli
+            header_loaded = True
+        else:
+            if not header_loaded or len(line) < 16 or line[0] == '' or \
+               line[0] == '-':
+                continue
+            out.append(Activity(line, column_map))
 
     return out
 
