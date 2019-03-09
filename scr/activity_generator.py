@@ -7,7 +7,7 @@ generate all html files. When no input csv in defined, input is read from
 stdin. When no output file is defined, output is written to stdout.
 
 Usage:
-generator.py -f field -o output_filename -a csv_filename template_dir
+activity_generator.py -f field -o output_filename -a csv_filename template_dir
 """
 
 import activity_parser as parser
