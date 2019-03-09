@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 """
-This file generates a single html page. When tun multiple times, is can
-generate all html files. When to input csv in defined, input is read from
+This file generates a single html page. When run multiple times, is can
+generate all html files. When no input csv in defined, input is read from
 stdin. When no output file is defined, output is written to stdout.
 
 Usage:
