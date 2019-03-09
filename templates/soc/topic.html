@@ -1,0 +1,24 @@
+<li class="activity-out col-12 col-md-3 col-xxs-12 col-xs-6 col-sm-4 gridder-list {{activity-type}}"
+    data-griddercontent="#{{id}}-gridder" id={{id}}>
+<div class="activity-in" name="{{id}}">
+ <img class="activity-logo" src="{{logo}}" alt="Logo aktivity" onerror="this.src='static/no-image.svg'" />
+ <div class="activity-name">{{name}}</div>
+ <div class="activity-date">{{duration}}</div>
+ <div class="activity-arrows-hidden"></div>
+</div>
+
+
+<div id="{{id}}-gridder" class="gridder-content">
+ <a href="{{link}}" target="_blank" class="col-md-3 hidden-xs col-sm-4 activity-image-link">
+  <img class="activity-detail-logo" src="{{image}}" alt="Fotografie aktivity"
+       onerror="this.src='static/no-image.svg'" />
+ </a>
+
+ <div class="activity-detail-text col-md-9 col-xs-12 col-sm-8">
+  <div class="orgs">{{orgs}}</div>
+  <p>{{annotation}}</p>
+
+  <a href="{{link}}" target="_blank" class="btn activity-detail-link">Přejít na web akce</a>
+ </div>
+</div>
+</li>

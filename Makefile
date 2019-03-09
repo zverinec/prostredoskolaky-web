@@ -1,20 +1,26 @@
 TEMPLATES=$(wildcard templates/*.html)
-GENERATORS=$(wildcard scr/*.py)
+SOC_TEMPLATES=$(wildcard templates/soc/*.html)
+ACTIVITY_GENERATORS=$(wildcard scr/activity*.py)
+SOC_GENERATORS=$(wildcard scr/soc*.py)
 ACTIVITIES=activities.csv
+SOC_TOPICS=soc_topics.csv
 GDRIVE_DATA=$(wildcard static/drive-data/*)
 STATIC_DATA=$(wildcard static/*)
 
 ALL_FILES=index.html matematika.html informatika.html fyzika.html chemie.html \
-          biologie.html geologie.html ekonomie.html
+          biologie.html geologie.html ekonomie.html soc/index.html
 ALL=$(patsubst %,build/%,$(ALL_FILES))
 
 all: $(ALL)
 
-build/index.html: $(TEMPLATES) $(GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
+build/index.html: $(TEMPLATES) $(ACTIVITY_GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
 	./scr/activity_generator.py -o $@ -a $(ACTIVITIES)
 
-build/%.html: $(TEMPLATES) $(GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
+build/%.html: $(TEMPLATES) $(ACTIVITY_GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
 	./scr/activity_generator.py -o $@ -a $(ACTIVITIES) -f $(patsubst build/%.html,%,$@)
+
+build/soc/%.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS)
+	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS)
 
 clean:
 	rm -r $(ALL)
