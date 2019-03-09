@@ -90,7 +90,7 @@ h2 {
 }
 
 .activity-detail-link {
-    background-color: #0087e2;
+    background-color: #486afc;
     color: white;
     font-weight: bold;
     padding: 10px 20px;
@@ -137,7 +137,7 @@ h2 {
 .gridder-expanded-content {
     margin: 20px 5px 20px 5px;
     border-radius: 3px;
-    box-shadow: 0 0 1px 3px #0478dc;
+    box-shadow: 0 0 1px 3px #7594f9;
     background-color: #fff;
 }
 
