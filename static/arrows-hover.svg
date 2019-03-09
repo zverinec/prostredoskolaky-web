@@ -11,7 +11,7 @@
    data-name="Vrstva 1"
    viewBox="0 0 29.014071 22.472954"
    version="1.1"
-   sodipodi:docname="arrows.svg"
+   sodipodi:docname="arrows-hover.svg"
    width="29.014071"
    height="22.472954"
    inkscape:version="0.92.1 r15371">
@@ -37,7 +37,7 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1062"
+     inkscape:window-height="1182"
      id="namedview13"
      showgrid="false"
      fit-margin-top="0"
@@ -45,7 +45,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="7.375"
-     inkscape:cx="14.507035"
+     inkscape:cx="-11.865846"
      inkscape:cy="11.229962"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -62,12 +62,12 @@
      class="cls-1"
      points="28.99 6.27 16 16.15 3.01 6.27"
      id="polyline8"
-     style="fill:none;stroke:#4fc3fd;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:none;stroke:#7594f9;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      transform="translate(-1.4929652,-4.7570077)" />
   <polyline
      class="cls-1"
      points="28.99 15.85 16 25.73 3.01 15.85"
      id="polyline10"
-     style="fill:none;stroke:#4fc3fd;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round"
+     style="fill:none;stroke:#7594f9;stroke-width:3px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      transform="translate(-1.4929652,-4.7570077)" />
 </svg>
