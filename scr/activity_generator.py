@@ -10,7 +10,7 @@ Usage:
 generator.py -f field -o output_filename -a csv_filename template_dir
 """
 
-import parser
+import activity_parser as parser
 import os
 import sys
 import config

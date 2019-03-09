@@ -11,10 +11,10 @@ ALL=$(patsubst %,build/%,$(ALL_FILES))
 all: $(ALL)
 
 build/index.html: $(TEMPLATES) $(GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
-	./scr/generator.py -o $@ -a $(ACTIVITIES)
+	./scr/activity_generator.py -o $@ -a $(ACTIVITIES)
 
 build/%.html: $(TEMPLATES) $(GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
-	./scr/generator.py -o $@ -a $(ACTIVITIES) -f $(patsubst build/%.html,%,$@)
+	./scr/activity_generator.py -o $@ -a $(ACTIVITIES) -f $(patsubst build/%.html,%,$@)
 
 clean:
 	rm -r $(ALL)
