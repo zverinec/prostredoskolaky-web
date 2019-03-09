@@ -48,49 +48,41 @@
 }
 
 .logos {
-    margin: 10px;
+    margin: 13px;
     display: flex;
     align-items: center;
 }
 
 .logos a {
-    width: 50px;
-    height: 50px;
+    width: 64px;
+    height: 44px;
     display: inline-block;
     background-size: cover;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
-#logo-mu {
-    background-image: url("../static/logo/mu.svg");
-}
-
-#logo-prf {
-    background-image: url("../static/logo/prf.svg");
+#logo-sci {
+    background-image: url("../static/logo/sci.svg");
 }
 
 #logo-fi {
     background-image: url("../static/logo/fi.svg");
 }
 
-#logo-esf {
-    background-image: url("../static/logo/esf.svg");
+#logo-econ {
+    background-image: url("../static/logo/econ.svg");
 }
 
-#logo-mu:hover {
-    background-image: url("../static/logo/mu-hover.svg");
-}
-
-#logo-prf:hover {
-    background-image: url("../static/logo/prf-hover.svg");
+#logo-sci:hover {
+    background-image: url("../static/logo/sci-hover.svg");
 }
 
 #logo-fi:hover {
     background-image: url("../static/logo/fi-hover.svg");
 }
 
-#logo-esf:hover {
-    background-image: url("../static/logo/esf-hover.svg");
+#logo-econ:hover {
+    background-image: url("../static/logo/econ-hover.svg");
 }
 
 .logos-invisible {
