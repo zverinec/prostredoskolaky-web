@@ -101,5 +101,35 @@
    </div>
   </div>
 
+  <script>
+  $(function() {
+      $('#seminars-list li.activity-highlighted').shuffle();
+      $('#seminars-list li.activity-normal').shuffle();
+      $('#events-list li').shuffle();
+
+      // Call Gridder
+      $('.gridder').gridderExpander({
+          scroll: true,
+          scrollOffset: 5,
+          scrollTo: "listitem",               // panel or listitem
+          animationSpeed: 400,
+          animationEasing: "easeInOutExpo",
+          showNav: false,                     // Show Navigation
+          nextText: "Next",                   // Next button text
+          prevText: "Previous",               // Previous button text
+          closeText: "Close",                 // Close button text
+          onStart: function(){
+              //Gridder Inititialized
+          },
+          onContent: function(){
+              //Gridder Content Loaded
+          },
+          onClosed: function(){
+              //Gridder Closed
+          }
+      });
+  });
+  </script>
+
  </body>
 </html>

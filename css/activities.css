@@ -121,6 +121,10 @@ h2 {
     color: #ffce40;
 }
 
+.soc-detail {
+    padding: 15px;
+}
+
 @media screen and (min-width: 1200px) {
     .activity-detail-text {
         font-size: 120%;
