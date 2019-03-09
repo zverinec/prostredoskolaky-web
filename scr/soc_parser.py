@@ -2,11 +2,11 @@
 # encoding: utf-8
 
 """
-This file provides functions for events parsing.
+This file provides functions for SOC parsing.
 If executed from command line, it checks for consistency of an input.
 """
 
-# Usage: activity_parser.py [ -i infile.csv ] [ -o outfile.html ]
+# Usage: soc_parser.py [ -i infile.csv ] [ -o outfile.html ]
 # If no input file specified, input is read from stdin.
 # If no output file specified, output is generated to stdout.
 
@@ -56,8 +56,8 @@ def parse_orgs(orgs):
     return res
 
 
-class Activity(object):
-    """Represents single activity"""
+class SOC(object):
+    """Represents single SOC topic"""
 
     def __init__(self, splitted, column_map):
         self._parse_from_line(splitted, column_map)
@@ -65,24 +65,16 @@ class Activity(object):
     def _parse_from_line(self, splitted, column_map):
         cm = column_map
 
-        self.id = splitted[cm['header']]
-        self.short_name = splitted[cm['short-name']]
-        self.full_name = splitted[cm['full-name']]
-        self.orgs = parse_orgs(splitted[cm['orgs']])
+        self.name = splitted[cm['name']]
+        self.garant = splitted[cm['garant']]
+        self.head = splitted[cm['head']]
+        self.contact = splitted[cm['contact']]
         self.fields = splitted[cm['fields']].split(',')
         self.fields = list(map(lambda s: s.strip(), self.fields))
-        self.type = splitted[cm['type']]
-        self.date = splitted[cm['date']]
-        self.target = splitted[cm['target']]
-        self.link = splitted[cm['link']]
-        self.price = splitted[cm['price']]
-        self.place = splitted[cm['place']]
-        self.contact = splitted[cm['contact']]
-        self.highlighted = (splitted[cm['highlighted']].lower() == 'ano')
         self.annotation = splitted[cm['annotation']]
 
     def __str__(self):
-        return self.id
+        return self.name
 
     __repr__ = __str__
 
@@ -101,10 +93,10 @@ def parse_csv(f):
                 column_map[name.lower()] = coli
             header_loaded = True
         else:
-            if not header_loaded or len(line) < 16 or line[0] == '' or \
+            if not header_loaded or len(line) < 7 or line[0] == '' or \
                line[0] == '-':
                 continue
-            out.append(Activity(line, column_map))
+            out.append(SOC(line, column_map))
 
     return out
 
