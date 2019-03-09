@@ -7,7 +7,8 @@ generate all html files. When no input csv in defined, input is read from
 stdin. When no output file is defined, output is written to stdout.
 
 Usage:
-soc_generator.py -o output_filename -t socs_topics_filename template_dir
+soc_generator.py -o output_filename -t socs_topics_filename
+    -g socs_garants_filename template_dir
 """
 
 import soc_parser as parser
@@ -20,15 +21,17 @@ import datetime
 TEMPLATE_TOPIC = 'topic.html'
 TEMPLATE_INDEX = 'index.html'
 TEMPLATE_NAVBAR = 'navbar.html'
+TEMPLATE_GARANT = 'garant.html'
 TEMPLATE_DIR = 'templates/soc'
 IMAGE_DIR = os.path.join('static', 'drive-data')
 
 
 class ArgOpts(object):
-    def __init__(self, topics=None, ofn=None, path=None):
+    def __init__(self, topics=None, ofn=None, path=None, garants=None):
         self.topics = topics
         self.ofn = ofn
         self.template_dir = path
+        self.garants = garants
 
 
 def parse_args(argv):
@@ -46,6 +49,9 @@ def parse_args(argv):
         elif argv[i] == '-f' and i < len(argv)-1:
             opts.field = argv[i+1]
             i += 1
+        elif argv[i] == '-g' and i < len(argv)-1:
+            opts.garants = argv[i+1]
+            i += 1
         elif i > 0:
             opts.template_dir = argv[i]
 
@@ -58,7 +64,7 @@ def parse_args(argv):
 
 
 def generate_soc(template, topic):
-    template = template.replace('{{name}}',topic.name)
+    template = template.replace('{{name}}', topic.name)
     template = template.replace('{{garant}}', topic.garant)
     template = template.replace('{{head}}', topic.head)
     template = template.replace('{{contact}}', topic.contact)
@@ -67,18 +73,27 @@ def generate_soc(template, topic):
     return template
 
 
-def generate_socs(index_t, output, topic_t, topics):
+def generate_garant(template, garant, topics, index):
+    template = template.replace('{{name}}', garant.name)
+    template = template.replace('{{id}}', 'white' if index%2 == 0 else 'gray')
+    template = template.replace('{{intro}}', garant.intro)
+
+    return template
+
+
+def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
     last_line_indent = 0
 
     topic_text = topic_t.read()
+    garant_text = garant_t.read()
 
     for line in index_t:
         line = line.replace('{{build_datetime}}',
                             datetime.datetime.now().strftime("%-d. %-m. %Y"))
 
-        if '{{topics}}' in line:
-            for topic in topics:
-                output.write(generate_soc(topic_text, topic) + '\n')
+        if '{{garants}}' in line:
+            for i, garant in enumerate(garants):
+                output.write(generate_garant(garant_text, garant, topics, i) + '\n')
 
         else:
             output.write(line)
@@ -87,21 +102,28 @@ def generate_socs(index_t, output, topic_t, topics):
 if __name__ == '__main__':
     args = parse_args(sys.argv)
 
+    if args.garants is None:
+        sys.stderr.write('You must provide garants filename!\n')
+        sys.exit(1)
+
     output = open(args.ofn, 'w', encoding='utf-8') if args.ofn else sys.stdout
     topics = open(args.topics, 'r', encoding='utf-8') \
              if args.topics else sys.stdin
+    garants = open(args.garants, 'r', encoding='utf-8')
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
     print('Template dir: %s' % (template_dir))
 
     path_index = os.path.join(template_dir, TEMPLATE_INDEX)
     path_topic = os.path.join(template_dir, TEMPLATE_TOPIC)
+    path_garant = os.path.join(template_dir, TEMPLATE_GARANT)
 
-    topics = parser.parse_csv(topics)
-    # topics = list(filter(lambda a: a.id != '-' and a.id != '', topics))
+    topics = parser.parse_topic_csv(topics)
+    garants = parser.parse_garant_csv(garants)
 
     with open(path_index, 'r', encoding='utf-8') as index,\
-         open(path_topic, 'r', encoding='utf-8') as topic:
-        generate_socs(index, output, topic, topics)
+         open(path_topic, 'r', encoding='utf-8') as topic,\
+         open(path_garant, 'r', encoding='utf-8') as garant:
+        generate_garants(index, output, topic, garant, topics, garants)
 
     # ofn will be closed automatically here
