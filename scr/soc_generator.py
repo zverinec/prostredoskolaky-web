@@ -75,7 +75,7 @@ def generate_soc(template, topic):
 
 def generate_garant(g_template, s_template, garant, topics, index):
     g_template = g_template.replace('{{name}}', garant.name)
-    g_template = g_template.replace('{{id}}', 'white' if index%2 == 0 else 'gray')
+    g_template = g_template.replace('{{id}}', 'blue' if index%2 == 0 else 'gray')
     g_template = g_template.replace('{{intro}}', garant.intro)
 
     if '{{topics}}' in g_template:

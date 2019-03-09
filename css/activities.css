@@ -4,7 +4,7 @@
     background-color: #efefef;
 }
 
-#events {
+#events, #blue {
     padding-top: 30px;
     padding-bottom: 40px;
     background-color: #ecf1fe;
@@ -32,7 +32,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.activities-list {
+.activities-list, .soc-topics-list {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
@@ -49,15 +49,32 @@ h2 {
     background: white url('/static/arrows.svg') center bottom 15px no-repeat;
 }
 
+.soc-in {
+    height: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-right: 70px; /* for arrows (they must stick at bottom) */
+    background: white url('/static/arrows.svg') center right 25px no-repeat;
+}
+
 .selectedItem .activity-in {
     background: white url('/static/arrows-hover.svg') center bottom 15px no-repeat;
+}
+
+.selectedItem .soc-in {
+    background: white url('/static/arrows-hover.svg') center right 25px no-repeat;
 }
 
 .activity-in:hover {
     background: white url('/static/arrows-hover.svg') center bottom 15px no-repeat;
 }
 
-.activity-out {
+.soc-in:hover {
+    background: white url('/static/arrows-hover.svg') center right 25px no-repeat;
+}
+
+.activity-out, .soc-out {
     padding: 5px;
     font-family: Cambria, "Times New Roman", Times, serif;
 }
@@ -126,6 +143,11 @@ h2 {
 .activity-name {
     text-align: center;
     font-size: 150%;
+    margin: 10px;
+}
+
+.soc-name {
+    font-size: 120%;
     margin: 10px;
 }
 
