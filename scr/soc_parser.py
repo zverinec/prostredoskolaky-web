@@ -33,29 +33,6 @@ def parse_args(argv):
     return opts
 
 
-class Org(object):
-    """Represents a single oganisator of an activity"""
-
-    def __init__(self, name, url):
-        self.name = name
-        self.url = url
-
-    def __str__(self):
-        return self.name + ', ' + self.url
-
-    __repr__ = __str__
-
-
-def parse_orgs(orgs):
-    res = []
-    for org in orgs.split('; '):
-        org_splitted = org.split(': ')
-        if len(org_splitted) == 2:
-            res.append(Org(org_splitted[0], org_splitted[1]))
-
-    return res
-
-
 class SOC(object):
     """Represents single SOC topic"""
 
@@ -79,7 +56,25 @@ class SOC(object):
     __repr__ = __str__
 
 
-def parse_csv(f):
+class Garant(object):
+    """Represents single SOC garant"""
+
+    def __init__(self, splitted, column_map):
+        self._parse_from_line(splitted, column_map)
+
+    def _parse_from_line(self, splitted, column_map):
+        cm = column_map
+
+        self.name = splitted[cm['header']]
+        self.intro = splitted[cm['intro']]
+
+    def __str__(self):
+        return self.name
+
+    __repr__ = __str__
+
+
+def parse_topic_csv(f):
     """Reads file 'f', returns output as string"""
     out = []
 
@@ -101,6 +96,28 @@ def parse_csv(f):
     return out
 
 
+def parse_garant_csv(f):
+    """Reads file 'f', returns output as string"""
+    out = []
+
+    reader = csv.reader(f, delimiter=',', quotechar='"')
+    column_map = {}
+    header_loaded = False
+
+    for i, line in enumerate(reader):
+        if line[0].lower() == 'header':
+            for coli, name in enumerate(line):
+                column_map[name.lower()] = coli
+            header_loaded = True
+        else:
+            if not header_loaded or len(line) < 2 or line[0] == '' or \
+               line[0] == '-':
+                continue
+            out.append(Garant(line, column_map))
+
+    return out
+
+
 def parse_file(fn):
     with open(fn, 'r', encoding='utf-8') as f:
         return parse_csv(f)
@@ -114,7 +131,7 @@ if __name__ == '__main__':
     else:
         fi = sys.stdin
 
-    res = parse_csv(fi)
+    res = parse_topic_csv(fi)
 
     if args.ofn != "":
         fo = open(args.ofn, 'w', encoding='utf-8')
