@@ -42,6 +42,7 @@ class SOC(object):
     def _parse_from_line(self, splitted, column_map):
         cm = column_map
 
+        self.id = splitted[cm['header']]
         self.name = splitted[cm['name']]
         self.garant = splitted[cm['garant']]
         self.head = splitted[cm['head']]
@@ -51,7 +52,7 @@ class SOC(object):
         self.annotation = splitted[cm['annotation']]
 
     def __str__(self):
-        return self.name
+        return self.id
 
     __repr__ = __str__
 

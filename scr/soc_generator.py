@@ -64,6 +64,7 @@ def parse_args(argv):
 
 
 def generate_soc(template, topic):
+    template = template.replace('{{id}}', topic.id)
     template = template.replace('{{name}}', topic.name)
     template = template.replace('{{garant}}', topic.garant)
     template = template.replace('{{head}}', topic.head)
