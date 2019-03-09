@@ -73,12 +73,18 @@ def generate_soc(template, topic):
     return template
 
 
-def generate_garant(template, garant, topics, index):
-    template = template.replace('{{name}}', garant.name)
-    template = template.replace('{{id}}', 'white' if index%2 == 0 else 'gray')
-    template = template.replace('{{intro}}', garant.intro)
+def generate_garant(g_template, s_template, garant, topics, index):
+    g_template = g_template.replace('{{name}}', garant.name)
+    g_template = g_template.replace('{{id}}', 'white' if index%2 == 0 else 'gray')
+    g_template = g_template.replace('{{intro}}', garant.intro)
 
-    return template
+    if '{{topics}}' in g_template:
+        top_out = ''
+        for topic in topics:
+            top_out += generate_soc(s_template, topic)
+        g_template = g_template.replace('{{topics}}', top_out)
+
+    return g_template
 
 
 def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
@@ -93,7 +99,10 @@ def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
 
         if '{{garants}}' in line:
             for i, garant in enumerate(garants):
-                output.write(generate_garant(garant_text, garant, topics, i) + '\n')
+                filtered_topics = filter(lambda x: x.garant == garant.name, topics)
+                output.write(generate_garant(
+                    garant_text, topic_text, garant, filtered_topics, i
+                ) + '\n')
 
         else:
             output.write(line)
