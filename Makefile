@@ -20,7 +20,7 @@ build/index.html: $(TEMPLATES) $(ACTIVITY_GENERATORS) $(ACTIVITIES) $(GDRIVE_DAT
 build/%.html: $(TEMPLATES) $(ACTIVITY_GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $(STATIC_DATA)
 	./scr/activity_generator.py -o $@ -a $(ACTIVITIES) -f $(patsubst build/%.html,%,$@)
 
-build/soc/%.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS)
+build/soc/%.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GARANTS)
 	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS)
 
 clean:
