@@ -1,13 +1,13 @@
 .gridder-expanded-content {
     margin: 0px 5px 20px 5px;
     border-radius: 3px;
-    box-shadow: 0px 3px 1px 0px #0478dc, -3px 0px 1px 0px #0478dc, 3px 0px 1px 0px #0478dc;
+    box-shadow: 0px 3px 1px 0px #7594f9, -3px 0px 1px 0px #7594f9, 3px 0px 1px 0px #7594f9;
     background-color: #fff;
     display: flex;
 }
 
 .selectedItem .soc-in {
-    box-shadow: 0px -3px 1px 0px #0478dc, -3px 0px 1px 0px #0478dc, 3px 0px 1px 0px #0478dc;
+    box-shadow: 0px -3px 1px 0px #7594f9, -3px 0px 1px 0px #7594f9, 3px 0px 1px 0px #7594f9;
 }
 
 .selectedItem {
@@ -57,7 +57,7 @@
 #blue {
     padding-top: 30px;
     padding-bottom: 40px;
-    background-color: #dde9ed;
+    background-color: #ecf1fe;
 }
 
 .soc-topics-list {
