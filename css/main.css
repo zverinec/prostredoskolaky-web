@@ -101,3 +101,7 @@ h2 {
 .main-button:hover {
     color: #ffce40;
 }
+
+.no-bottom-margin {
+    margin-bottom: 0px !important;
+}
