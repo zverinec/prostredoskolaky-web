@@ -70,3 +70,34 @@ h1, h2, h3, h4, h5, h6 {
 .w-100 {
     width: 100%;
 }
+
+h2 {
+    color: #054899;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#center-buttons {
+    text-align: center;
+}
+
+#center-buttons>a.btn {
+    position: relative;
+    margin: 15px;
+}
+
+.main-button {
+    background-color: #0087e2;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    position: absolute;
+    bottom: 0;
+    font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+}
+
+.main-button:hover {
+    color: #ffce40;
+}

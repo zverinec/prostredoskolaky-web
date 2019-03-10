@@ -1,0 +1,66 @@
+.gridder-expanded-content {
+    margin: 20px 5px 20px 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 1px 3px #0478dc;
+    background-color: #fff;
+    display: flex;
+}
+
+.soc-topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0px;
+    justify-content: center;
+}
+
+.soc-in {
+    height: 100%;
+    padding: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    padding-right: 70px; /* for arrows (they must stick at bottom) */
+    background: white url('/static/arrows.svg') center right 25px no-repeat;
+}
+
+.soc-in:hover {
+    background: white url('/static/arrows-hover.svg') center right 25px no-repeat;
+}
+
+.selectedItem .soc-in {
+    background: white url('/static/arrows-hover.svg') center right 25px no-repeat;
+}
+
+.soc-detail {
+    padding: 15px;
+}
+
+.soc-name {
+    font-size: 120%;
+    margin: 10px;
+}
+
+#gray {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #efefef;
+}
+
+#blue {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    background-color: #dde9ed;
+}
+
+.soc-topics-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0px;
+    justify-content: center;
+}
+
+.soc-out {
+    padding: 5px;
+    font-family: Cambria, "Times New Roman", Times, serif;
+}
