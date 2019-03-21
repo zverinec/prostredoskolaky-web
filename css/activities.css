@@ -113,3 +113,9 @@
     /* load hover image when page loaded, not after hover */
     display:none;
 }
+
+.activity-go-button {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+}
