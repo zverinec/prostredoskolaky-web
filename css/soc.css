@@ -31,6 +31,8 @@
     cursor: pointer;
     padding-right: 70px; /* for arrows (they must stick at bottom) */
     background: white url('/static/arrows.svg') center right 25px no-repeat;
+    display: flex;
+    justify-content: space-between;
 }
 
 .soc-in:hover {
@@ -66,4 +68,16 @@
 .soc-out {
     padding: 5px 0px 5px 0px;
     font-family: Cambria, "Times New Roman", Times, serif;
+}
+
+.soc-field-image {
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px 10px 0px;
+    float: left;
+}
+
+.field-icons {
+    white-space: nowrap;
+    flex-shrink: 0; /* Never shrink! */
 }

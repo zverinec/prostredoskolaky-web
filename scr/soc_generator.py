@@ -71,6 +71,13 @@ def generate_soc(template, topic):
     template = template.replace('{{contact}}', topic.contact)
     template = template.replace('{{annotation}}', topic.annotation)
 
+    if '{{field-icons}}' in template:
+        icon_text = ''
+        for t in topic.fields:
+            icon_text += ('<div class="soc-field-image"><img src="/static/soc-icon/%s.svg"'
+                          'alt="%s" title="%s"/></div>' % (t, t, t))
+        template = template.replace('{{field-icons}}', icon_text)
+
     return template
 
 
