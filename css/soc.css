@@ -1,5 +1,5 @@
 .gridder-expanded-content {
-    margin: 0px 5px 20px 5px;
+    margin: 0px 5px 10px 5px;
     border-radius: 3px;
     box-shadow: 0px 3px 1px 0px #7594f9, -3px 0px 1px 0px #7594f9, 3px 0px 1px 0px #7594f9;
     background-color: #fff;
@@ -24,7 +24,7 @@
 
 .soc-in {
     height: 100%;
-    padding: 15px;
+    padding: 5px 15px 5px 15px;
     border-radius: 3px;
     cursor: pointer;
     padding-right: 70px; /* for arrows (they must stick at bottom) */
@@ -40,7 +40,7 @@
 }
 
 .soc-detail {
-    padding: 15px;
+    padding: 15px 25px 20px 25px;
 }
 
 .soc-name {
