@@ -71,13 +71,21 @@
 }
 
 .soc-field-image {
-    width: 30px;
-    height: 30px;
-    margin: 10px 10px 10px 0px;
+    width: 40px;
+    padding: 10px 10px 10px 0px;
     float: left;
+    height: 100%;
 }
 
 .field-icons {
     white-space: nowrap;
     flex-shrink: 0; /* Never shrink! */
+    height: 100%;
+    margin-left: 10px;
+}
+
+.field-icons img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
