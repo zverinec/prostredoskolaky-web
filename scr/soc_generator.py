@@ -76,7 +76,7 @@ def generate_soc(template, topic):
 
 def generate_garant(g_template, s_template, garant, topics, index):
     g_template = g_template.replace('{{name}}', garant.name)
-    g_template = g_template.replace('{{id}}', 'blue' if index%2 == 0 else 'gray')
+    g_template = g_template.replace('{{color}}', 'blue' if index%2 == 0 else 'gray')
     g_template = g_template.replace('{{intro}}', garant.intro)
 
     if '{{topics}}' in g_template:
@@ -104,6 +104,12 @@ def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
                 output.write(generate_garant(
                     garant_text, topic_text, garant, filtered_topics, i
                 ) + '\n')
+
+        elif '{{about-color}}' in line:
+            output.write(line.replace(
+                '{{about-color}}',
+                'blue' if len(garants)%2 == 0 else 'gray'
+            ))
 
         else:
             output.write(line)

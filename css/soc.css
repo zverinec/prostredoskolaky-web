@@ -50,16 +50,9 @@
     margin: 10px;
 }
 
-#gray {
+.soc-garant {
     padding-top: 30px;
     padding-bottom: 40px;
-    background-color: #efefef;
-}
-
-#blue {
-    padding-top: 30px;
-    padding-bottom: 40px;
-    background-color: #ecf1fe;
 }
 
 .soc-topics-list {
