@@ -98,11 +98,14 @@
 }
 
 .gridder-expanded-content {
-    margin: 20px 5px 20px 5px;
-    border-radius: 3px;
-    box-shadow: 0 0 1px 3px #7594f9;
     background-color: #fff;
     display: flex;
+}
+
+.gridder-show {
+    border-radius: 3px;
+    box-shadow: 0 0 1px 3px #7594f9;
+    margin: 20px 5px 20px 5px;
 }
 
 .activity-arrows-hidden {
