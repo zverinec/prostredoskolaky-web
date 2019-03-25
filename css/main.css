@@ -99,6 +99,11 @@ h2 {
     color: #ffce40;
 }
 
+.btn {
+    white-space: normal !important;
+    overflow-wrap: break-word;
+}
+
 .no-bottom-margin {
     margin-bottom: 0px !important;
 }
