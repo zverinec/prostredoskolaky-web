@@ -10,6 +10,13 @@
     background-color: #ecf1fe;
 }
 
+@media (max-width: 380px) {
+    .c-events, .c-seminars {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 .activities-list {
     display: flex;
     flex-wrap: wrap;
