@@ -33,7 +33,13 @@
     background: white url('/static/arrows.svg') center bottom 15px no-repeat;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 380px) {
+ .activity-in {
+    padding: 15px 15px 40px 15px; /* for arrows (they must stick at bottom) */
+ }
+}
+
+@media (min-width: 380px) and (max-width: 550px) {
  .activity-in {
     padding: 5px 5px 40px 5px; /* for arrows (they must stick at bottom) */
  }
