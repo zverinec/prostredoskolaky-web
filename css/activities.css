@@ -154,8 +154,32 @@
 
 .gridder-show {
     border-radius: 3px;
-    box-shadow: 0 0 1px 3px #7594f9;
-    margin: 20px 5px 20px 5px;
+}
+
+@media (min-width: 381px) {
+    .gridder-show {
+        box-shadow: 0 0 1px 3px #7594f9;
+        margin: 20px 5px 20px 5px;
+    }
+
+    .selectedItem .activity-in {
+        box-shadow: 0 0 1px 3px #7594f9;
+    }
+}
+
+@media (max-width: 380px) {
+    .gridder-show {
+        box-shadow: 0px 3px 1px 0px #7594f9, -3px 0px 1px 0px #7594f9, 3px 0px 1px 0px #7594f9;
+        margin: 0px 5px 20px 5px;
+    }
+
+    .selectedItem .activity-in {
+        box-shadow: 0px -3px 1px 0px #7594f9, -3px 0px 1px 0px #7594f9, 3px 0px 1px 0px #7594f9;
+    }
+
+    .activity-out {
+        padding-bottom: 0px;
+    }
 }
 
 .activity-arrows-hidden {
