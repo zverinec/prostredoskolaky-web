@@ -12,6 +12,7 @@ If executed from command line, it checks for consistency of an input.
 
 import sys
 import csv
+import logging
 
 
 class ArgOpts(object):
@@ -89,8 +90,15 @@ def parse_topic_csv(f):
                 column_map[name.lower()] = coli
             header_loaded = True
         else:
-            if not header_loaded or len(line) < 7 or line[0] == '' or \
-               line[0] == '-':
+            if not header_loaded or line[0] == '-':
+                continue
+            if len(line) < 7:
+                logging.warning('Not enough columns of SOC #%i' % (i+1))
+                continue
+            if line[0] == '':
+                logging.warning('Empty ID of SOC #%i (%s)' % (
+                    i+1, line[column_map['name']
+                ]))
                 continue
             out.append(SOC(line, column_map))
 
@@ -111,8 +119,13 @@ def parse_garant_csv(f):
                 column_map[name.lower()] = coli
             header_loaded = True
         else:
-            if not header_loaded or len(line) < 2 or line[0] == '' or \
-               line[0] == '-':
+            if not header_loaded or line[0] == '-':
+                continue
+            if len(line) < 2:
+                logging.warning('Not enough columns of SOC garant #%i' % (i+1))
+                continue
+            if line[0] == '':
+                logging.warning('Empty name of SOC garant #%i' % (i+1))
                 continue
             out.append(Garant(line, column_map))
 

@@ -12,6 +12,7 @@ If executed from command line, it checks for consistency of an input.
 
 import sys
 import csv
+import logging
 
 
 class ArgOpts(object):
@@ -101,8 +102,15 @@ def parse_csv(f):
                 column_map[name.lower()] = coli
             header_loaded = True
         else:
-            if not header_loaded or len(line) < 16 or line[0] == '' or \
-               line[0] == '-':
+            if not header_loaded or line[0] == '-':
+                continue
+            if len(line) < 16:
+                logging.warning('Not enough columns of activity #%i' % (i+1))
+                continue
+            if line[0] == '':
+                logging.warning('Empty ID of activity #%i (%s)' % (
+                    i+1, line[column_map['full-name']]
+                ))
                 continue
             out.append(Activity(line, column_map))
 
