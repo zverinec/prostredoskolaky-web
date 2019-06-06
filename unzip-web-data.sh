@@ -5,6 +5,7 @@ if [ $# -eq 0 ]; then
     exit 1
 fi
 
+rm -r 'static/drive-data'
 yes | unzip $1 'web-data/*' -d 'static/drive-data'
 mv static/drive-data/web-data/* 'static/drive-data'
 rmdir 'static/drive-data/web-data'
