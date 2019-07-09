@@ -88,6 +88,15 @@ def generate_activity(template, activity):
     template = template.replace('{{annotation}}', activity.annotation)
     template = template.replace('{{link}}', activity.link)
     template = template.replace(
+        '{{go-text}}',
+        'Přejit na web akce'
+        if activity.link != '' else 'Web této akce se připravuje'
+    )
+    template = template.replace(
+        '{{go-btn-class}}',
+        'disabled' if activity.link == '' else ''
+    )
+    template = template.replace(
         '{{activity-type}}',
         'activity-highlighted' if activity.highlighted else 'activity-normal'
     )
