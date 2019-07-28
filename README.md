@@ -47,7 +47,8 @@ manually on the production server, you may break auto-deployment.
  * Gridder:
    [https://github.com/oriongunning/gridder](https://github.com/oriongunning/gridder)
 
-## Authors
+## Authors, contact
 
+ * Primary contact: [prostredoskolaky@fi.muni.cz](mailto:prostredoskolaky@fi.muni.cz)
  * Design: Adela Miklikova
- * Technology & maintenance: Jan Horacek ([me@apophis.cz](mailto:me@apophis.cz))
+ * Technology: Jan Horacek ([me@apophis.cz](mailto:me@apophis.cz))
