@@ -1,7 +1,7 @@
 TEMPLATES=$(wildcard templates/*.html)
 SOC_TEMPLATES=$(wildcard templates/soc/*.html)
-ACTIVITY_GENERATORS=$(wildcard scr/activity*.py)
-SOC_GENERATORS=$(wildcard scr/soc*.py)
+ACTIVITY_GENERATORS=$(wildcard scr/activity*.py) scr/util.py scr/config.py
+SOC_GENERATORS=$(wildcard scr/soc*.py) scr/util.py scr/config.py
 ACTIVITIES=activities.csv
 SOC_TOPICS=soc_topics.csv
 SOC_GARANTS=soc_garants.csv

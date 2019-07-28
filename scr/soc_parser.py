@@ -12,6 +12,7 @@ If executed from command line, it checks for consistency of an input.
 import sys
 import csv
 import logging
+from util import add_nbsp
 
 
 class ArgOpts(object):
@@ -43,13 +44,13 @@ class SOC(object):
         cm = column_map
 
         self.id = splitted[cm['header']]
-        self.name = splitted[cm['name']]
-        self.garant = splitted[cm['garant']]
+        self.name = add_nbsp(splitted[cm['name']])
+        self.garant = add_nbsp(splitted[cm['garant']])
         self.head = splitted[cm['head']]
         self.contact = splitted[cm['contact']]
         self.fields = splitted[cm['fields']].split(',')
         self.fields = list(map(lambda s: s.strip(), self.fields))
-        self.annotation = splitted[cm['annotation']]
+        self.annotation = add_nbsp(splitted[cm['annotation']])
 
     def __str__(self):
         return self.id
@@ -66,8 +67,8 @@ class Garant(object):
     def _parse_from_line(self, splitted, column_map):
         cm = column_map
 
-        self.name = splitted[cm['header']]
-        self.intro = splitted[cm['intro']]
+        self.name = add_nbsp(splitted[cm['header']])
+        self.intro = add_nbsp(splitted[cm['intro']])
 
     def __str__(self):
         return self.name

@@ -12,6 +12,7 @@ If executed from command line, it checks for consistency of an input.
 import sys
 import csv
 import logging
+from util import add_nbsp
 
 
 class ArgOpts(object):
@@ -51,7 +52,7 @@ def parse_orgs(orgs):
     for org in orgs.split('; '):
         org_splitted = org.split(': ')
         if len(org_splitted) == 2:
-            res.append(Org(org_splitted[0], org_splitted[1]))
+            res.append(Org(add_nbsp(org_splitted[0]), org_splitted[1]))
 
     return res
 
@@ -67,19 +68,19 @@ class Activity(object):
 
         self.id = splitted[cm['header']]
         self.short_name = splitted[cm['short-name']]
-        self.full_name = splitted[cm['full-name']]
+        self.full_name = add_nbsp(splitted[cm['full-name']])
         self.orgs = parse_orgs(splitted[cm['orgs']])
         self.fields = splitted[cm['fields']].split(',')
         self.fields = list(map(lambda s: s.strip(), self.fields))
         self.type = splitted[cm['type']]
         self.date = splitted[cm['date']]
-        self.target = splitted[cm['target']]
+        self.target = add_nbsp(splitted[cm['target']])
         self.link = splitted[cm['link']]
-        self.price = splitted[cm['price']]
-        self.place = splitted[cm['place']]
+        self.price = add_nbsp(splitted[cm['price']])
+        self.place = add_nbsp(splitted[cm['place']])
         self.contact = splitted[cm['contact']]
         self.highlighted = (splitted[cm['highlighted']].lower() == 'ano')
-        self.annotation = splitted[cm['annotation']]
+        self.annotation = add_nbsp(splitted[cm['annotation']])
 
     def __str__(self):
         return self.id
