@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# encoding: utf-8
 
 """
 This file generates a single html page. When run multiple times, is can
