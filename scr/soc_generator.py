@@ -63,8 +63,10 @@ def parse_args(argv):
 
 
 def generate_soc(template, topic):
+    template = template.replace('{{state}}', 'soc-state-'+topic.state)
     template = template.replace('{{id}}', topic.id)
-    template = template.replace('{{name}}', topic.name)
+    name = topic.name + (' (obsazeno)' if topic.state == 'obsazeno' else '')
+    template = template.replace('{{name}}', name)
     template = template.replace('{{garant}}', topic.garant)
     template = template.replace('{{head}}', topic.head)
     template = template.replace('{{contact}}', topic.contact)
@@ -129,8 +131,8 @@ if __name__ == '__main__':
         sys.exit(1)
 
     output = open(args.ofn, 'w', encoding='utf-8') if args.ofn else sys.stdout
-    topics = open(args.topics, 'r', encoding='utf-8') \
-             if args.topics else sys.stdin
+    topics = (open(args.topics, 'r', encoding='utf-8')
+              if args.topics else sys.stdin)
     garants = open(args.garants, 'r', encoding='utf-8')
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 

@@ -45,6 +45,7 @@ class SOC(object):
 
         self.id = splitted[cm['header']]
         self.name = add_nbsp(splitted[cm['name']])
+        self.state = splitted[cm['state']]
         self.garant = add_nbsp(splitted[cm['garant']])
         self.head = splitted[cm['head']]
         self.contact = splitted[cm['contact']]
@@ -97,8 +98,8 @@ def parse_topic_csv(f):
                 continue
             if line[0] == '':
                 logging.warning('Empty ID of SOC #%i (%s)' % (
-                    i+1, line[column_map['name']
-                ]))
+                    i+1, line[column_map['name']]
+                ))
                 continue
             out.append(SOC(line, column_map))
 
