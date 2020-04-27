@@ -6,6 +6,6 @@ categories = [
     'Fyzika',
     'Chemie',
     'Biologie',
-    'Geologie',
+    'Vědy o Zemi',
     'Ekonomie',
 ]

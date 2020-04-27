@@ -14,6 +14,7 @@ import os
 import sys
 import config
 import datetime
+import util
 
 
 TEMPLATE_ACTIVITY = 'activity.html'
@@ -128,13 +129,14 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
         elif '{{navbar-fields}}' in line:
             s = navbar_t.read()
             for category in config.categories:
+                escaped = util.escape_field(category.lower())
                 output.write(
                     s.
                     replace('{{name}}', category).
-                    replace('{{lower_name}}', category.lower()).
+                    replace('{{url}}', escaped).
                     replace(
                         '{{class}}',
-                        'active' if category.lower() == field.lower() else '')
+                        'active' if escaped == field.lower() else '')
                 )
 
         elif '{{seminars}}' in line:

@@ -9,7 +9,7 @@ GDRIVE_DATA=$(wildcard static/drive-data/*)
 STATIC_DATA=$(wildcard static/*)
 
 ALL_FILES=index.html matematika.html informatika.html fyzika.html chemie.html \
-          biologie.html geologie.html ekonomie.html soc/index.html
+          biologie.html vedy-o-zemi.html ekonomie.html soc/index.html
 ALL=$(patsubst %,build/%,$(ALL_FILES))
 
 all: $(ALL)
@@ -26,4 +26,7 @@ build/soc/%.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GARANTS
 clean:
 	rm -r $(ALL)
 
-.PHONY: all clean
+check:
+	flake8 scr/*.py
+
+.PHONY: all clean check

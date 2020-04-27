@@ -12,7 +12,7 @@ If executed from command line, it checks for consistency of an input.
 import sys
 import csv
 import logging
-from util import add_nbsp
+from util import add_nbsp, escape_field
 
 
 class ArgOpts(object):
@@ -71,7 +71,7 @@ class Activity(object):
         self.full_name = add_nbsp(splitted[cm['full-name']])
         self.orgs = parse_orgs(splitted[cm['orgs']])
         self.fields = splitted[cm['fields']].split(',')
-        self.fields = list(map(lambda s: s.strip(), self.fields))
+        self.fields = list(map(lambda s: escape_field(s.strip()), self.fields))
         self.type = splitted[cm['type']]
         self.date = splitted[cm['date']]
         self.target = add_nbsp(splitted[cm['target']])
