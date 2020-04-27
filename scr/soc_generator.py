@@ -13,7 +13,6 @@ soc_generator.py -o output_filename -t socs_topics_filename
 import soc_parser as parser
 import os
 import sys
-import config
 import datetime
 
 
@@ -75,8 +74,9 @@ def generate_soc(template, topic):
     if '{{field-icons}}' in template:
         icon_text = ''
         for t in topic.fields:
-            icon_text += ('<div class="soc-field-image"><img src="/static/soc-icon/%s.svg"'
-                          'alt="%s" title="%s"/></div>' % (t, t, t))
+            icon_text += ('<div class="soc-field-image"><img src="/static/'
+                          'soc-icon/%s.svg" alt="%s" title="%s"/></div>' %
+                          (t, t, t))
         template = template.replace('{{field-icons}}', icon_text)
 
     return template
@@ -84,7 +84,8 @@ def generate_soc(template, topic):
 
 def generate_garant(g_template, s_template, garant, topics, index):
     g_template = g_template.replace('{{name}}', garant.name)
-    g_template = g_template.replace('{{color}}', 'blue' if index%2 == 0 else 'gray')
+    g_template = g_template.replace('{{color}}',
+                                    'blue' if index % 2 == 0 else 'gray')
     g_template = g_template.replace('{{intro}}', garant.intro)
 
     if '{{topics}}' in g_template:
@@ -97,8 +98,6 @@ def generate_garant(g_template, s_template, garant, topics, index):
 
 
 def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
-    last_line_indent = 0
-
     topic_text = topic_t.read()
     garant_text = garant_t.read()
 
@@ -108,7 +107,9 @@ def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
 
         if '{{garants}}' in line:
             for i, garant in enumerate(garants):
-                filtered_topics = filter(lambda x: x.garant == garant.name, topics)
+                filtered_topics = filter(
+                    lambda x: x.garant == garant.name, topics
+                )
                 output.write(generate_garant(
                     garant_text, topic_text, garant, filtered_topics, i
                 ) + '\n')
@@ -116,7 +117,7 @@ def generate_garants(index_t, output, topic_t, garant_t, topics, garants):
         elif '{{about-color}}' in line:
             output.write(line.replace(
                 '{{about-color}}',
-                'blue' if len(garants)%2 == 0 else 'gray'
+                'blue' if len(garants) % 2 == 0 else 'gray'
             ))
 
         else:

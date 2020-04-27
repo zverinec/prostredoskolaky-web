@@ -133,11 +133,6 @@ def parse_garant_csv(f):
     return out
 
 
-def parse_file(fn):
-    with open(fn, 'r', encoding='utf-8') as f:
-        return parse_csv(f)
-
-
 if __name__ == '__main__':
     args = parse_args(sys.argv)
 

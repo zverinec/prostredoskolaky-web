@@ -80,7 +80,8 @@ def generate_activity(template, activity):
         template = template.replace('{{logo}}', 'static/no-image.svg')
 
     if photo:
-        template = template.replace('{{image}}', os.path.join(IMAGE_DIR, photo))
+        template = template.replace('{{image}}', os.path.join(IMAGE_DIR,
+                                                              photo))
     else:
         template = template.replace('{{image}}', 'static/no-image.svg')
 
@@ -111,7 +112,6 @@ def generate_activity(template, activity):
 
 def generate_activities(index_t, output, navbar_t, activity_t, seminars,
                         events, field=''):
-    last_line_indent = 0
     write = True
 
     activity_text = activity_t.read()
@@ -168,8 +168,8 @@ if __name__ == '__main__':
     args = parse_args(sys.argv)
 
     output = open(args.ofn, 'w', encoding='utf-8') if args.ofn else sys.stdout
-    csv = open(args.activities, 'r', encoding='utf-8') \
-          if args.activities else sys.stdin
+    csv = (open(args.activities, 'r', encoding='utf-8')
+           if args.activities else sys.stdin)
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
     print('Template dir: %s' % (template_dir))
