@@ -64,7 +64,13 @@ def parse_args(argv):
 def generate_soc(template, topic):
     template = template.replace('{{state}}', 'soc-state-'+topic.state)
     template = template.replace('{{id}}', topic.id)
-    name = topic.name + (' (obsazeno)' if topic.state == 'obsazeno' else '')
+
+    name = topic.name
+    if topic.state == 'obsazeno':
+        name = name + ' (obsazeno)'
+    elif topic.state == 'ukončeno':
+        name = name + ' (ukončeno)'
+
     template = template.replace('{{name}}', name)
     template = template.replace('{{garant}}', topic.garant)
     template = template.replace('{{head}}', topic.head)
