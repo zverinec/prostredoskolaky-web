@@ -8,4 +8,4 @@
 
 RewriteEngine on
 RewriteRule ^((.*))\.html$ /$1 [R=302]
-RewriteRule ^((index|matematika|informatika|fyzika|chemie|biologie|vedy-o-zemi|ekonomie))$ $1.html [END]
+RewriteRule ^((index|matematika|informatika|fyzika|chemie|biologie|vedy-o-zemi|ekonomie|soc/index))$ $1.html [END]
