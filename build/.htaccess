@@ -5,3 +5,7 @@
 	AuthUserFile htpasswds/prostredoskolaky.htpasswd
 	Require valid-user
 </FilesMatch>
+
+RewriteEngine on
+RewriteRule ^((index|matematika|informatika|fyzika|chemie|biologie|vedy-o-zemi|ekonomie))$ $1.html [L]
+RewriteRule ^((.*))\.html$ /$1 [R=302]
