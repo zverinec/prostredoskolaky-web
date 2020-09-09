@@ -130,7 +130,6 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
         elif '{{#if field' in line:
             match = re.search(r'\{\{#if field=(.*)\}\}', line)
             write = (field == match.group(1))
-            print(field == match.group(1))
 
         elif '{{navbar-fields}}' in line:
             s = navbar_t.read()
