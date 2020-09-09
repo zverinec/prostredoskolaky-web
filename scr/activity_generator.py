@@ -177,8 +177,6 @@ if __name__ == '__main__':
            if args.activities else sys.stdin)
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
-    print('Template dir: %s' % (template_dir))
-
     path_index = os.path.join(template_dir, TEMPLATE_INDEX)
     path_activity = os.path.join(template_dir, TEMPLATE_ACTIVITY)
     path_navbar = os.path.join(template_dir, TEMPLATE_NAVBAR)
@@ -188,7 +186,6 @@ if __name__ == '__main__':
 
     if args.field:
         field = args.field
-        print('Generating for field: %s' % (field.lower()))
         highlighted = list(
             filter(lambda a: field.lower() in a.fields, activities)
         )

@@ -143,8 +143,6 @@ if __name__ == '__main__':
     garants = open(args.garants, 'r', encoding='utf-8')
     template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
 
-    print('Template dir: %s' % (template_dir))
-
     path_index = os.path.join(template_dir, TEMPLATE_INDEX)
     path_topic = os.path.join(template_dir, TEMPLATE_TOPIC)
     path_garant = os.path.join(template_dir, TEMPLATE_GARANT)
