@@ -134,7 +134,7 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
         elif '{{navbar-fields}}' in line:
             s = navbar_t.read()
             for category in config.categories:
-                escaped = util.escape_field(category.lower())
+                escaped = util.normalize_text(category.lower())
                 output.write(
                     s.
                     replace('{{name}}', category).

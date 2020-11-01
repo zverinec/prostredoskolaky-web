@@ -12,7 +12,7 @@ If executed from command line, it checks for consistency of an input.
 import sys
 import csv
 import logging
-from util import add_nbsp
+from util import add_nbsp, normalize_text
 
 
 class ArgOpts(object):
@@ -53,7 +53,9 @@ class SOC(object):
         self.head = splitted[cm['head']]
         self.contact = splitted[cm['contact']]
         self.fields = splitted[cm['fields']].split(',')
-        self.fields = list(map(lambda s: s.strip(), self.fields))
+        self.fields = list(map(
+            lambda s: normalize_text(s.strip()), self.fields
+        ))
         self.annotation = add_nbsp(splitted[cm['annotation']])
 
     def __str__(self):
