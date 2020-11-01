@@ -85,7 +85,8 @@ def generate_soc(template, topic):
     template = template.replace('{{garant}}', topic.garant)
     template = template.replace('{{head}}', topic.head)
     template = template.replace('{{contact}}', topic.contact)
-    template = template.replace('{{annotation}}', topic.annotation)
+    template = template.replace('{{annotation}}',
+                                topic.annotation.replace('\n', '</p><p>'))
 
     if '{{field-icons}}' in template:
         icon_text = ''
