@@ -94,10 +94,9 @@ def generate_soc(template, topic):
             icon_text += ('<div class="soc-field-image"><img src="/static/'
                           'soc-icon/%s.svg" alt="%s" title="%s"/></div>' %
                           (t, t, t))
-            svg_path = os.path.join(IMAGE_DIR, '%s.svg' % (t))
+            svg_path = os.path.join(IMAGE_DIR, f'{t}.svg')
             if not os.path.isfile(svg_path):
-                logging.warning('Missing file %s for SOC %s' %
-                                (svg_path, topic.id))
+                logging.warning(f'Missing file {svg_path} for SOC {topic.id}')
         template = template.replace('{{field-icons}}', icon_text)
 
     return template
