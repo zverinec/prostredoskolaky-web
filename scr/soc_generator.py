@@ -7,7 +7,7 @@ stdin. When no output file is defined, output is written to stdout.
 
 Usage:
 soc_generator.py -o output_filename -t socs_topics_filename
-    -g socs_garants_filename template_dir
+    -g socs_garants_filename template_dir -s state1,state2,...
 """
 
 import soc_parser as parser
@@ -25,16 +25,20 @@ IMAGE_DIR = os.path.join('static', 'drive-data')
 
 
 class ArgOpts(object):
-    def __init__(self, topics=None, ofn=None, path=None, garants=None):
+    def __init__(self, topics=None, ofn=None, path=None, garants=None,
+                 states=None):
         self.topics = topics
         self.ofn = ofn
         self.template_dir = path
         self.garants = garants
+        if states is None:
+            states = []
+        self.states = states
 
 
 def parse_args(argv):
     """Parses arguments"""
-    opts = ArgOpts()
+    opts = ArgOpts(states=['volno', 'obsazeno'])  # defaults
 
     i = 0
     while i < len(argv):
@@ -49,6 +53,9 @@ def parse_args(argv):
             i += 1
         elif argv[i] == '-g' and i < len(argv)-1:
             opts.garants = argv[i+1]
+            i += 1
+        elif argv[i] == '-s' and i < len(argv)-1:
+            opts.states = argv[i+1].split(',')
             i += 1
         elif i > 0:
             opts.template_dir = argv[i]
