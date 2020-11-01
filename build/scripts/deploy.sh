@@ -11,4 +11,5 @@ if [ $? -eq 0 ]; then
 	OUTPUT+=$(cd ../.. && make all 2>&1)$'\n\n'
 fi
 
-echo "$OUTPUT" | mail -s "[prostredoskolaky-web] Deploy status" "prostredoskolaky@fi.muni.cz"
+echo "$OUTPUT" | mail -a "Content-Type: text/plain; charset=UTF-8" \
+    -s "[prostredoskolaky-web] Deploy status" "prostredoskolaky@fi.muni.cz"
