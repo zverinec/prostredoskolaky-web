@@ -21,10 +21,10 @@ build/%.html: $(TEMPLATES) $(ACTIVITY_GENERATORS) $(ACTIVITIES) $(GDRIVE_DATA) $
 	./scr/activity_generator.py -o $@ -a $(ACTIVITIES) -f $(patsubst build/%.html,%,$@)
 
 build/soc/index.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GARANTS)
-	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno
+	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno -m templates/soc/index.html
 
 build/soc/all.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GARANTS)
-	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno,ukončeno
+	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno,ukončeno -m templates/soc/all.html
 
 clean:
 	rm -r $(ALL)

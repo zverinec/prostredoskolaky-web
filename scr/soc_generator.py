@@ -8,6 +8,7 @@ stdin. When no output file is defined, output is written to stdout.
 Usage:
 soc_generator.py -o output_filename -t socs_topics_filename
     -g socs_garants_filename template_dir -s state1,state2,...
+    -m path-to-root-template
 """
 
 import soc_parser as parser
@@ -16,24 +17,24 @@ import sys
 import datetime
 
 
+TEMPLATE_DIR = 'templates/soc'
 TEMPLATE_TOPIC = 'topic.html'
 TEMPLATE_INDEX = 'index.html'
 TEMPLATE_NAVBAR = 'navbar.html'
 TEMPLATE_GARANT = 'garant.html'
-TEMPLATE_DIR = 'templates/soc'
 IMAGE_DIR = os.path.join('static', 'drive-data')
 
 
 class ArgOpts(object):
-    def __init__(self, topics=None, ofn=None, path=None, garants=None,
-                 states=None):
+    def __init__(self, topics=None, ofn=None, garants=None, states=None,
+                 template=os.path.join(TEMPLATE_DIR, TEMPLATE_INDEX)):
         self.topics = topics
         self.ofn = ofn
-        self.template_dir = path
         self.garants = garants
         if states is None:
             states = []
         self.states = states
+        self.template = template
 
 
 def parse_args(argv):
@@ -57,8 +58,9 @@ def parse_args(argv):
         elif argv[i] == '-s' and i < len(argv)-1:
             opts.states = argv[i+1].split(',')
             i += 1
-        elif i > 0:
-            opts.template_dir = argv[i]
+        elif argv[i] == '-m' and i < len(argv)-1:
+            opts.template = argv[i+1]
+            i += 1
 
         i += 1
 
@@ -148,9 +150,9 @@ if __name__ == '__main__':
     topics = (open(args.topics, 'r', encoding='utf-8')
               if args.topics else sys.stdin)
     garants = open(args.garants, 'r', encoding='utf-8')
-    template_dir = args.template_dir if args.template_dir else TEMPLATE_DIR
+    template_dir = os.path.dirname(args.template)
 
-    path_index = os.path.join(template_dir, TEMPLATE_INDEX)
+    path_index = args.template
     path_topic = os.path.join(template_dir, TEMPLATE_TOPIC)
     path_garant = os.path.join(template_dir, TEMPLATE_GARANT)
 
