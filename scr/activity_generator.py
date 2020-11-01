@@ -105,7 +105,7 @@ def generate_activity(template, activity):
 
     text = ''
     for org in activity.orgs:
-        text += '<a href="%s" target="_blank">%s</a>, ' % (org.url, org.name)
+        text += f'<a href="{org.url}" target="_blank">{org.name}</a>, '
     template = template.replace('{{orgs}}', text[:-2])
 
     return template

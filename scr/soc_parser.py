@@ -109,12 +109,11 @@ def parse_topic_csv(f):
             if not header_loaded or line[0] == '-':
                 continue
             if len(line) < 7:
-                logging.warning('Not enough columns of SOC #%i' % (i+1))
+                logging.warning(f'Not enough columns of SOC #{i+1}')
                 continue
             if line[0] == '':
-                logging.warning('Empty ID of SOC #%i (%s)' % (
-                    i+1, line[column_map['name']]
-                ))
+                logging.warning(f'Empty ID of SOC #{i+1} '
+                                f'({line[column_map["name"]]})')
                 continue
             out.append(SOC(line, column_map))
 
@@ -138,10 +137,10 @@ def parse_garant_csv(f):
             if not header_loaded or line[0] == '-':
                 continue
             if len(line) < 2:
-                logging.warning('Not enough columns of SOC garant #%i' % (i+1))
+                logging.warning(f'Not enough columns of SOC garant #{i+1}')
                 continue
             if line[0] == '':
-                logging.warning('Empty name of SOC garant #%i' % (i+1))
+                logging.warning(f'Empty name of SOC garant #{i+1}')
                 continue
             out.append(Garant(line, column_map))
 

@@ -107,12 +107,11 @@ def parse_csv(f):
             if not header_loaded or line[0] == '-':
                 continue
             if len(line) < 16:
-                logging.warning('Not enough columns of activity #%i' % (i+1))
+                logging.warning(f'Not enough columns of activity #{i+1}')
                 continue
             if line[0] == '':
-                logging.warning('Empty ID of activity #%i (%s)' % (
-                    i+1, line[column_map['full-name']]
-                ))
+                logging.warning(f'Empty ID of activity #{i+1} '
+                                f'({line[column_map["full-name"]]})')
                 continue
             out.append(Activity(line, column_map))
 
