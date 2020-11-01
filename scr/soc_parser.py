@@ -34,6 +34,9 @@ def parse_args(argv):
     return opts
 
 
+STATES_ORDER = ['volno', 'obsazeno', 'ukončeno']
+
+
 class SOC(object):
     """Represents single SOC topic"""
 
@@ -55,6 +58,16 @@ class SOC(object):
 
     def __str__(self):
         return self.id
+
+    def __lt__(self, other):
+        # all not-found-states after all found states
+        iself = (STATES_ORDER.index(self.state)
+                 if self.state in STATES_ORDER else len(STATES_ORDER))
+        iother = (STATES_ORDER.index(other.state)
+                  if other.state in STATES_ORDER else len(STATES_ORDER))
+        if iself != iother:
+            return iself < iother
+        return self.name < other.name
 
     __repr__ = __str__
 

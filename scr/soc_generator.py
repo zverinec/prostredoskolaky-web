@@ -148,7 +148,8 @@ if __name__ == '__main__':
     path_garant = os.path.join(template_dir, TEMPLATE_GARANT)
 
     topics = parser.parse_topic_csv(topics)
-    topics = list(filter(lambda topic: topic.state != 'ukončeno', topics))
+    topics = list(filter(lambda topic: topic.state in args.states, topics))
+    topics.sort()
     garants = parser.parse_garant_csv(garants)
 
     with open(path_index, 'r', encoding='utf-8') as index,\
