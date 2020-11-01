@@ -15,6 +15,7 @@ import soc_parser as parser
 import os
 import sys
 import datetime
+import logging
 
 
 TEMPLATE_DIR = 'templates/soc'
@@ -22,7 +23,7 @@ TEMPLATE_TOPIC = 'topic.html'
 TEMPLATE_INDEX = 'index.html'
 TEMPLATE_NAVBAR = 'navbar.html'
 TEMPLATE_GARANT = 'garant.html'
-IMAGE_DIR = os.path.join('static', 'drive-data')
+IMAGE_DIR = os.path.join('static', 'soc-icon')
 
 
 class ArgOpts(object):
@@ -92,6 +93,10 @@ def generate_soc(template, topic):
             icon_text += ('<div class="soc-field-image"><img src="/static/'
                           'soc-icon/%s.svg" alt="%s" title="%s"/></div>' %
                           (t, t, t))
+            svg_path = os.path.join(IMAGE_DIR, '%s.svg' % (t))
+            if not os.path.isfile(svg_path):
+                logging.warning('Missing file %s for SOC %s' %
+                                (svg_path, topic.id))
         template = template.replace('{{field-icons}}', icon_text)
 
     return template
