@@ -109,3 +109,11 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.soc-state-ukončeno {
+    color: #8d8d8d;
+}
+
+.soc-state-ukončeno .soc-field-image img {
+    filter: grayscale();
+}
