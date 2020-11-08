@@ -78,11 +78,11 @@ h2, h3, h4, h5, h6 {
     color: #486afc;
 }
 
-#center-buttons {
+.center-buttons {
     text-align: center;
 }
 
-#center-buttons>a.btn {
+.center-buttons a.btn {
     position: relative;
     margin: 15px;
 }
@@ -97,6 +97,20 @@ h2, h3, h4, h5, h6 {
 
 .main-button:hover {
     color: #ffce40;
+}
+
+.main-outline-button {
+    font-weight: bold;
+    padding: 5px 10px;
+    font-family: "Century Gothic", Helvetica, Arial, sans-serif;
+    background-color: Transparent;
+    border: 3px solid #0000ff;
+    color: #0000ff;
+}
+
+.main-outline-button:hover {
+    color: #0000ff;
+    border: 3px solid #ffce40;
 }
 
 .btn {
