@@ -14,7 +14,6 @@ import os
 import sys
 import config
 import datetime
-import util
 import re
 
 
@@ -133,15 +132,14 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
 
         elif '{{navbar-fields}}' in line:
             s = navbar_t.read()
-            for category in config.categories:
-                escaped = util.normalize_text(category.lower())
+            for id_, name in config.categories.items():
                 output.write(
                     s.
-                    replace('{{name}}', category).
-                    replace('{{url}}', escaped).
+                    replace('{{name}}', name).
+                    replace('{{url}}', id_).
                     replace(
                         '{{class}}',
-                        'active' if escaped == field.lower() else '')
+                        'active' if id_ == field else '')
                 )
 
         elif '{{seminars}}' in line:
@@ -164,6 +162,13 @@ def generate_activities(index_t, output, navbar_t, activity_t, seminars,
                 output.write(line.replace('{{about-id}}', 'about-index'))
             else:
                 output.write(line.replace('{{about-id}}', 'about-field'))
+
+        elif '{{title}}' in line:
+            title = ''
+            if field != '':
+                title = config.categories[field] + ' – '
+            title += 'Akce MU pro středoškoláky'
+            output.write(line.replace('{{title}}', title))
 
         elif write:
             output.write(line)
