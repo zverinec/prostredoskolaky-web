@@ -24,7 +24,7 @@ build/soc/index.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GAR
 	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno -m templates/soc/index.html
 
 build/soc/all.html: $(SOC_TEMPLATES) $(SOC_GENERATORS) $(SOC_TOPICS) $(SOC_GARANTS)
-	./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno,ukončeno -m templates/soc/all.html
+	LC_ALL=en_US.UTF-8 ./scr/soc_generator.py -o $@ -t $(SOC_TOPICS) -g $(SOC_GARANTS) -s volno,obsazeno,ukončeno -m templates/soc/all.html
 
 clean:
 	rm -r $(ALL)
