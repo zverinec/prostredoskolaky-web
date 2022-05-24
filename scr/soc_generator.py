@@ -45,7 +45,7 @@ def parse_args(argv):
     i = 0
     while i < len(argv):
         if argv[i] == '-t' and i < len(argv)-1:
-            opts.topics = argv[i+1]
+            opts.topics = argv[i+1].split(',')
             i += 1
         elif argv[i] == '-o' and i < len(argv)-1:
             opts.ofn = argv[i+1]
@@ -154,8 +154,8 @@ if __name__ == '__main__':
         sys.exit(1)
 
     output = open(args.ofn, 'w', encoding='utf-8') if args.ofn else sys.stdout
-    topics = (open(args.topics, 'r', encoding='utf-8')
-              if args.topics else sys.stdin)
+    topic_files = ([open(filename, 'r', encoding='utf-8') for filename in args.topics]
+                   if args.topics else [sys.stdin])
     garants = open(args.garants, 'r', encoding='utf-8')
     template_dir = os.path.dirname(args.template)
 
@@ -163,7 +163,10 @@ if __name__ == '__main__':
     path_topic = os.path.join(template_dir, TEMPLATE_TOPIC)
     path_garant = os.path.join(template_dir, TEMPLATE_GARANT)
 
-    topics = parser.parse_topic_csv(topics)
+    topics = []
+    for topic_file in topic_files:
+        topics += parser.parse_topic_csv(topic_file)
+
     topics = list(filter(lambda topic: topic.state in args.states, topics))
     topics.sort()
     garants = parser.parse_garant_csv(garants)
