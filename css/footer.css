@@ -31,18 +31,6 @@
     text-align: right;
 }
 
-@media screen and (max-width: 1199px) {
-    .brochure-image {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    .brochure-image {
-        width: 85%;
-    }
-}
-
 #footer a {
     color: #bbb;
 }
