@@ -1,0 +1,4 @@
+Unikátní ID,,Název tématu,Stav,Garanční pracoviště,Vedoucí,Kontakt,Obor,Popis tématu
+pro potřeby webu,jméno + datum kontroly,"ať je vypovídající, ale nepřehánějte to s délkou prosím",volno / obsazeno / ukončeno,vyberte ze seznamu ústavů a fakult,celé jméno i se všemi tituly,emailová adresa na vedoucího,"matematika, informatika, fyzika, chemie, biologie, geologie, ekonomie (chcete-li víc, oddělte čárkou)","podrobnější popis, snažte se nepsat víc než 1 odstavec"
+HEADER,,name,state,garant,head,contact,fields,annotation
+sledovani-tepove-frekvence,"Pavlína Roučová, ",Sledování tepové frekvence v různých fázích dne a noci,obsazeno,Fakulta sportovních studií MU,"Ing. Mgr. Jana Juříková, Ph.D.",jurikova@fsps.muni.cz,,
