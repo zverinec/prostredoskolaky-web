@@ -52,10 +52,13 @@ class SOC(object):
         self.garant = add_nbsp(splitted[cm['garant']])
         self.head = splitted[cm['head']]
         self.contact = splitted[cm['contact']]
-        self.fields = splitted[cm['fields']].split(',')
-        self.fields = list(map(
-            lambda s: normalize_text(s.strip()), self.fields
-        ))
+        if splitted[cm['fields']] != '':
+            self.fields = splitted[cm['fields']].split(',')
+            self.fields = list(map(
+                lambda s: normalize_text(s.strip()), self.fields
+            ))
+        else:
+            self.fields = []
         self.annotation = add_nbsp(splitted[cm['annotation']])
 
     def __str__(self):
