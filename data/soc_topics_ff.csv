@@ -1,4 +1,4 @@
 Unikátní ID,Zkontroloval 2019,Zkontroloval 2020,Zkontroloval 2022,Název tématu,Stav,Garanční pracoviště,Vedoucí,Kontakt,Obor,Popis tématu
-pro potřeby webu,jméno + datum kontroly,jméno + datum kontroly,jméno + datum kontroly,"ať je vypovídající, ale nepřehánějte to s délkou prosím",volno / obsazeno / ukončeno,vyberte ze seznamu ústavů a fakult,celé jméno i se všemi tituly,emailová adresa na vedoucího,"matematika, informatika, fyzika, chemie, biologie, geologie, ekonomie (chcete-li víc, oddělte čárkou)","podrobnější popis, snažte se nepsat víc než 1 odstavec"
+pro potřeby webu,jméno + datum kontroly,jméno + datum kontroly,jméno + datum kontroly,"ať je vypovídající, ale nepřehánějte to s délkou prosím",volno / obsazeno / ukončeno,vyberte ze seznamu ústavů a fakult,celé jméno i se všemi tituly,emailová adresa na vedoucího,"matematika, informatika, fyzika, chemie, biologie, geologie, ekonomie, bioinformatika, humanitni_vedy (chcete-li víc, oddělte čárkou)","podrobnější popis, snažte se nepsat víc než 1 odstavec"
 HEADER,,,,name,state,garant,head,contact,fields,annotation
-kroj-21-stoleti,,,,Kroj a 21. storočie,obsazeno,Filozofická fakulta MU,Mgr. Lucia Franická Macková,528839@mail.muni.cz,etnologie,
+kroj-21-stoleti,,,,Kroj a 21. storočie,obsazeno,Filozofická fakulta MU,Mgr. Lucia Franická Macková,528839@mail.muni.cz,humanitni_vedy,
