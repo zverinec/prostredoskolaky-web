@@ -1,4 +1,4 @@
-Unikátní ID,Zkontroloval 2023,Název tématu,Stav,Garanční pracoviště,Vedoucí,Kontakt,Obor,Popis tématu
+Unikátní ID,,Název tématu,Stav,Garanční pracoviště,Vedoucí,Kontakt,Obor,Popis tématu
 pro potřeby webu,jméno + datum kontroly,"ať je vypovídající, ale nepřehánějte to s délkou prosím",volno / obsazeno / ukončeno,vyberte ze seznamu ústavů a fakult,celé jméno i se všemi tituly,emailová adresa na vedoucího,"matematika, informatika, fyzika, chemie, biologie, geologie, ekonomie, bioinformatika, humanitni_vedy (chcete-li víc, oddělte čárkou)","podrobnější popis, snažte se nepsat víc než 1 odstavec"
 HEADER,,name,state,garant,head,contact,fields,annotation
 isogenie-kryptografia,,Isogenie v kryptografii,ukončeno,Fakulta informatiky MU,Bc. Vojtěch Suchánek,vojtechsu@mail.muni.cz,informatika,"Jedním z cílů moderní kryptografie je vyřešit problém potenciálního nástupu kvantových počítačů. Klasické protokoly závisející na faktorizaci čísel a problému diskrétního logaritmu přestávají být v tomto kontextu bezpečné.
