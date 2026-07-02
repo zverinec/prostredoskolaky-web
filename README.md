@@ -52,3 +52,4 @@ manually on the production server, you may break auto-deployment.
  * Primary contact: [prostredoskolaky@fi.muni.cz](mailto:prostredoskolaky@fi.muni.cz)
  * Design: Adela Miklikova
  * Technology: Jan Horacek ([me@apophis.cz](mailto:me@apophis.cz))
+ * Maintenance: Michael Hruby ([564245@mail.muni.cz](mailto:564245@mail.muni.cz))
